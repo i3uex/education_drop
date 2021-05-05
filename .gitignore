@@ -10,3 +10,9 @@ Data/Raw/Profesorado -becario por curso academico.xls
 Data/Raw/Profesorado -datos de expediente,personales y de acceso.xls
 
 Data/Raw/Profesorado -plan asignatura convocatoria.xls
+
+Data/Interim/plan_subject_call.csv
+
+Data/Interim/polytechnic_record_personal_access.csv
+
+Data/Interim/polytechnic_scholarship_per_year.csv
