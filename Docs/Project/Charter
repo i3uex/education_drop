@@ -1,0 +1,119 @@
+# Project Charter
+
+## Business background
+- The main problem this project tries to address is the creation of knowledge based on the 
+huge amount of data stored by the aforementioned entities. This knowledge should aim to identify those characteristics 
+or patterns that may influence in the citizens' labour trajectories. 
+
+## Scope
+- The project will make use of existing data science techniques like clustering, decision tree or regression algorithms to generate the knowledge extracted from the project.
+- The conclusions and new knowledge obtained in the project will be consumed by the clients by providing an information system that allow accesing to the final project reports.
+
+## Personnel
+- Who are on this project:
+     - Project lead: -
+        - Data scientist(s): -
+        - Data engineer: -
+        - Software architecture engineer: -
+        - Researchers: -
+     - Client:
+        - Data administrator: -
+        - Business contact: -
+  
+  (This information is anonymised for the ISD congress)
+
+## Metrics
+
+- **What are the qualitative objectives?** 
+    - The main objetives of the project is to provide the interested entities useful data to be used in the definition of eficient policies. In that sense, the success of the project could be measured by the number of insights to support those policies that we are able to provide them. 
+- **What is a quantifiable metric:**
+    - Number of public policies defined by using the project insgihts. 
+- **Quantify what improvement in the values of the metrics are useful for the customer scenario:** 
+    - any number of policies.
+- **What is the baseline (current) value of the metric? (e.g. current fraction of users with 4-week inactivity = 60%)**
+    - Not applicable in this case
+- **How will we measure the metric? (e.g. A/B test on a specified subset for a specified period; or comparison of performance after implementation to baseline)**
+    - Not applicable in this case
+
+## Plan
+- Phases (milestones), timeline, short description of what we'll do in each phase.
+
+ **Working packages:**
+ 
+**Work Package 0 (WP.0): Project coordination and management.**
+
+Description: The main objective of this activity will be to keep the project under control, ensuring that the objectives remain achievable. 
+
+Expected results: Effective administrative management of all documentation and aspects of the project.
+
+**Work Package 1 (WP.1): Effective administrative management of all the documentation and aspects of the project.**
+
+Description: This work package is aimed at knowing the domain both at a conceptual level and at a physical level. At the conceptual level, the questions that the project is intended to answer to must be described. At the physical level, the data sources necessary to answer those questions must be identified.
+
+Deliverables:
+- E.1.1. Document with questions of interest for the study.
+- E.1.2. Report of data sources.
+
+Expected results: High level knowledge of available data sources.
+ 
+**Work Package 2 (WP.2): Data acquisition and understanding**
+
+Description: In this work package, the necessary security policies will be established to guarantee the data privacy according to the new European regulations. The architecture for the data channeling will also be developed and an initial analysis of the suitability of the data will be carried out to answer the questions. Finally, the data will be prepared for the application of machine learning techniques.
+
+Deliverables:
+- E.2.1. Secure data exchange and new data incorporation protocols.
+- E.2.2. Data quality report.
+- E.2.3. Detailed report of the data pre-processing.
+
+Expected results: Integration of all available data reviewed and without inconsistencies. Processes of data integration and their preparation to apply machine learning techniques.
+
+**Work Package 4 (WP.4) Analysis of data and learning models**
+
+Description: The different learning and prediction models will be created. These models allow the identification of the success and failure patterns from the data, as well as the behavioral predictions.
+
+Deliverables:
+- E.4.1. Detailed report of the built models.
+- E.4.2. Detailed report of the identified patterns.
+- E.4.3. Detailed report of the predictions made.
+
+Expected results: Library of the predictive models developed.
+
+**Work Package 5 (WP.5): Implementation and development of the information system (functional prototype)**
+
+Description: The different software development tasks will be carried out to create the functional, scalable and replicable prototypes to access all the knowledge generated in the project. 
+
+Deliverables:
+- E.5.1. User manual of the prototype built.
+- E.5.2. User manual of the data update protocol.
+
+Expected results: Functional prototype of the learning system. Updating protocol defined.
+
+**Work Package 7 (WP.7): Provide aggregated data in OpenData formats**
+
+Description: In this WP, the conclusions and information generated by the project will be analyzed in order to identify what information could be transformed into new data to be provided to third parties that could also build new services based on them:
+
+Deliverables:
+- E.7.1. Catalogue of new datasets provided.
+
+Expected results: A catalog of useful datasets with the results of the project to be used by third parties.
+
+## Architecture
+- **What data do we expect? Raw data in the customer data sources (e.g. on-prem files, SQL, on-prem Hadoop etc.)**
+    - We expect datasets generated through the client's databases.
+
+- **Data movement from on-prem to any public repository**
+    - The data movement will be done to a public Google Drive repository using the user interface provided 
+    by Google Drive.
+- **What tools and data storage/analytics resources will be used in the solution e.g.**
+    - Google Drive for Data Storage
+    - Python with Pandas library for data processing in general and other libraries
+    - Python with Scikit Learn and other libraries for modeling
+- **How will the score or operationalized web service(s) (RRS and/or BES) be consumed in the business workflow of the customer? If applicable, write down pseudo code for the APIs of the web service calls.**
+    - For this research project the information will be delivered in the form of an overall report with the final conclusions drawn.
+
+## Communication
+
+- **How will we keep in touch? Weekly meetings?**
+    - In order to maintain contact, a meeting will be held every week to discuss the progress made and the doubts that have arisen during the week and to resolve them among all the members of the working group.
+- **Who are the contact persons on both sides?**
+    - (This information is anonymised for the ISD congress)
