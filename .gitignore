@@ -1,18 +1,24 @@
-
-Data/Raw/Politecnica -becario por curso academico.xls
-
-Data/Raw/Politecnica -datos de expediente,personales y de acceso.xls
-
-Data/Raw/Politecnica -plan asignatura convocatoria.xls
-
-Data/Raw/Profesorado -becario por curso academico.xls
-
-Data/Raw/Profesorado -datos de expediente,personales y de acceso.xls
-
-Data/Raw/Profesorado -plan asignatura convocatoria.xls
-
-Data/Interim/plan_subject_call.csv
-
-Data/Interim/polytechnic_record_personal_access.csv
-
-Data/Interim/polytechnic_scholarship_per_year.csv
+/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv
+/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv
+/Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv
+/Data/Interim/Teaching/teaching_plan_subject_call.csv
+/Data/Interim/Teaching/teaching_record_personal_access.csv
+/Data/Interim/Teaching/teaching_scholarship_per_year.csv
+/Data/Processed/Polytechnic/pr_polytechnic_plan_subject_call.csv
+/Data/Processed/Polytechnic/pr_polytechnic_record_personal_access.csv
+/Data/Processed/Polytechnic/pr_polytechnic_scholarship_per_year.csv
+/Data/Processed/Teaching/pr_teaching_plan_subject_call.csv
+/Data/Processed/Teaching/pr_teaching_record_personal_access.csv
+/Data/Processed/Teaching/pr_teaching_scholarship_per_year.csv
+/Data/Raw/Politecnica -becario por curso academico.xls
+/Data/Raw/Politecnica -datos de expediente,personales y de acceso.xls
+/Data/Raw/Politecnica -plan asignatura convocatoria.xls
+/Data/Raw/Profesorado -becario por curso academico.xls
+/Data/Raw/Profesorado -datos de expediente,personales y de acceso.xls
+/Data/Raw/Profesorado -plan asignatura convocatoria.xls
+/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv
+/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.csv
+/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv
+/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv

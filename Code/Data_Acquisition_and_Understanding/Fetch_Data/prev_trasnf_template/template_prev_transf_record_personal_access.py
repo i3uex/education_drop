@@ -5,11 +5,21 @@ import apitep_core
 class TemplatePreviousTransfRecordPersonalAccess:
 
     @staticmethod
-    def execute_previous_transf(input_path: str, header: int, output_path: str):
-        polytechnic_record_personal_access = pd.read_excel(
-            input_path,
-            sheet_name='Sheet 1',
-            header=header)
+    def execute_previous_transf(input_path: str, output_path: str, number_of_sheets: int):
+        polytechnic_record_personal_access = ""
+        i = 1
+        while i <= number_of_sheets:
+            polytechnic_record_personal_access_n = pd.read_excel(
+                input_path,
+                sheet_name='Sheet ' + str(i),
+                header=0)
+            if i == 1:
+                polytechnic_record_personal_access = polytechnic_record_personal_access_n.copy()
+            else:
+                polytechnic_record_personal_access = pd.concat([polytechnic_record_personal_access,
+                                                                polytechnic_record_personal_access_n])
+            i += 1
+
         polytechnic_record_personal_access = polytechnic_record_personal_access[
             ['expediente', 'cod_plan', 'des_plan', 'anio_apertura_expediente',
              'exp_cerrado', 'exp_trasladado', 'tipo_traslado', 'exp_bloqueado',
