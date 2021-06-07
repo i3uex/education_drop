@@ -1,0 +1,265 @@
+2021-05-13 09:34:45,954     INFO __main__ Start RecordPersonalAccessETL
+2021-05-13 09:34:45,954    DEBUG __main__ main()
+2021-05-13 09:34:45,954     INFO apitep_utils.etl Init Integration
+2021-05-13 09:34:45,954    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-13 09:34:45,954     INFO apitep_utils.data_processor Init data processor
+2021-05-13 09:34:45,954    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-13 09:34:45,954     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-13 09:34:45,954    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-13 09:34:45,955     INFO root Check if path exists
+2021-05-13 09:34:45,955    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-13 09:34:45,955     INFO root Check if path exists
+2021-05-13 09:34:45,955    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:34:45,955     INFO apitep_utils.data_processor Load input dataset
+2021-05-13 09:34:45,955    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-13 09:34:45,965     INFO apitep_utils.data_processor Save dataset report
+2021-05-13 09:34:45,965    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-13 09:34:45,965     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-13 09:34:45,965    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-13 09:34:46,441    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.html
+2021-05-13 09:34:59,395     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-13 09:34:59,395    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-13 09:35:04,865     INFO __main__ Process record_personal_access data
+2021-05-13 09:35:04,865    DEBUG __main__ RecordPersonalAccessETL.process()
+2021-05-13 09:35:04,865    DEBUG apitep_utils.data_processor - time: 0.0002 s
+2021-05-13 09:35:04,865     INFO apitep_utils.data_processor Save output dataset
+2021-05-13 09:35:04,865    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-13 09:35:04,902     INFO apitep_utils.data_processor Save dataset report
+2021-05-13 09:35:04,902    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:35:04,902     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-13 09:35:04,902    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:35:04,902    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_record_personal_access.html
+2021-05-13 09:35:17,026     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-13 09:35:17,026    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:35:22,287     INFO apitep_utils.data_processor Log dataset changes
+2021-05-13 09:35:22,287    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-13 09:41:45,396     INFO __main__ Start RecordPersonalAccessETL
+2021-05-13 09:41:45,396    DEBUG __main__ main()
+2021-05-13 09:41:45,396     INFO apitep_utils.etl Init Integration
+2021-05-13 09:41:45,396    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-13 09:41:45,396     INFO apitep_utils.data_processor Init data processor
+2021-05-13 09:41:45,396    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-13 09:41:45,396     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-13 09:41:45,396    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-13 09:41:45,396     INFO root Check if path exists
+2021-05-13 09:41:45,396    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-13 09:41:45,396     INFO root Check if path exists
+2021-05-13 09:41:45,396    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:41:45,397     INFO apitep_utils.data_processor Load input dataset
+2021-05-13 09:41:45,397    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-13 09:41:45,406     INFO __main__ Process record_personal_access data
+2021-05-13 09:41:45,406    DEBUG __main__ RecordPersonalAccessETL.process()
+2021-05-13 09:41:45,406    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-13 09:41:45,406     INFO apitep_utils.data_processor Save output dataset
+2021-05-13 09:41:45,406    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-13 09:41:45,435     INFO apitep_utils.data_processor Save dataset report
+2021-05-13 09:41:45,435    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:41:45,435     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-13 09:41:45,436    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:41:45,898    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.html
+2021-05-13 09:41:58,844     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-13 09:41:58,844    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:42:04,145     INFO apitep_utils.data_processor Log dataset changes
+2021-05-13 09:42:04,146    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-13 09:49:28,304     INFO __main__ Start RecordPersonalAccessETL
+2021-05-13 09:49:28,304    DEBUG __main__ main()
+2021-05-13 09:49:28,304     INFO apitep_utils.etl Init Integration
+2021-05-13 09:49:28,304    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-13 09:49:28,304     INFO apitep_utils.data_processor Init data processor
+2021-05-13 09:49:28,304    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-13 09:49:28,304     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-13 09:49:28,304    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-13 09:49:28,304     INFO root Check if path exists
+2021-05-13 09:49:28,304    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-13 09:49:28,304     INFO root Check if path exists
+2021-05-13 09:49:28,304    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:49:28,304     INFO apitep_utils.data_processor Load input dataset
+2021-05-13 09:49:28,304    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-13 09:49:28,314     INFO __main__ Process record_personal_access data
+2021-05-13 09:49:28,314    DEBUG __main__ RecordPersonalAccessETL.process()
+2021-05-13 09:49:28,314    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-13 09:49:28,314     INFO apitep_utils.data_processor Save output dataset
+2021-05-13 09:49:28,314    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-13 09:49:28,345     INFO apitep_utils.data_processor Save dataset report
+2021-05-13 09:49:28,345    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:49:28,345     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-13 09:49:28,345    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:49:28,823    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.html
+2021-05-13 09:49:41,586     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-13 09:49:41,586    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-13 09:49:46,975     INFO apitep_utils.data_processor Log dataset changes
+2021-05-13 09:49:46,975    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 09:13:31,480     INFO __main__ Start RecordPersonalAccessETL
+2021-05-14 09:13:31,480    DEBUG __main__ main()
+2021-05-14 09:13:31,480     INFO apitep_utils.etl Init Integration
+2021-05-14 09:13:31,480    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=None)
+2021-05-14 09:13:31,480     INFO apitep_utils.data_processor Init data processor
+2021-05-14 09:13:31,480    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=None, report_path=None)
+2021-05-14 09:13:31,480     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 09:13:31,480    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 09:13:31,480     INFO root Check if path exists
+2021-05-14 09:13:31,480    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-14 09:13:31,480     INFO root Check if path exists
+2021-05-14 09:13:31,480    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 09:13:31,480     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 09:13:31,480    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 09:13:31,490     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 09:13:31,490    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-14 09:13:31,490     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 09:13:31,490    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-14 09:13:31,965    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.html
+2021-05-14 09:13:44,881     INFO __main__ Process record_personal_access data
+2021-05-14 09:13:44,881    DEBUG __main__ RecordPersonalAccessETL.process()
+2021-05-14 09:13:44,881    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 09:13:44,881     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 09:13:44,881    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 09:13:44,911     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 09:13:44,911    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 09:13:44,911     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 09:13:44,911    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 09:13:44,911    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.html
+2021-05-14 09:13:57,002     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 09:13:57,003    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 10:20:48,407     INFO __main__ Start RecordPersonalAccessETL
+2021-05-14 10:20:48,408    DEBUG __main__ main()
+2021-05-14 10:20:48,408     INFO apitep_utils.etl Init Integration
+2021-05-14 10:20:48,408    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=None)
+2021-05-14 10:20:48,408     INFO apitep_utils.data_processor Init data processor
+2021-05-14 10:20:48,408    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=None, report_path=None)
+2021-05-14 10:20:48,408     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 10:20:48,408    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 10:20:48,408     INFO root Check if path exists
+2021-05-14 10:20:48,408    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-14 10:20:48,408     INFO root Check if path exists
+2021-05-14 10:20:48,408    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 10:20:48,408     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 10:20:48,408    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 10:20:48,418     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 10:20:48,418    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-14 10:20:48,418     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 10:20:48,418    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-14 10:20:48,891    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.html
+2021-05-14 10:21:01,932     INFO __main__ Process record_personal_access data
+2021-05-14 10:21:01,932    DEBUG __main__ RecordPersonalAccessETL.process()
+2021-05-14 10:21:01,932    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 10:21:01,932     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 10:21:01,932    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 10:21:01,963     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 10:21:01,963    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 10:21:01,963     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 10:21:01,963    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 10:21:01,964    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.html
+2021-05-14 10:21:13,428     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 10:21:13,428    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 11:05:57,131     INFO __main__ Start RecordPersonalAccessETL
+2021-05-14 11:05:57,131    DEBUG __main__ main()
+2021-05-14 11:05:57,131     INFO apitep_utils.etl Init Integration
+2021-05-14 11:05:57,131    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 11:05:57,131     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:05:57,131    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 11:05:57,131     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:05:57,131    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:05:57,132     INFO root Check if path exists
+2021-05-14 11:05:57,132    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-14 11:05:57,132     INFO root Check if path exists
+2021-05-14 11:05:57,132    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 11:05:57,132     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:05:57,132    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:05:57,149     INFO __main__ Process record_personal_access data
+2021-05-14 11:05:57,149    DEBUG __main__ RecordPersonalAccessETL.process()
+2021-05-14 11:05:57,149    DEBUG apitep_utils.data_processor - time: 0.0002 s
+2021-05-14 11:05:57,149     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:05:57,149    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:05:57,199     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:05:57,199    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 11:05:57,199     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:05:57,199    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 11:05:58,041    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.html
+2021-05-14 11:06:12,230     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:06:12,231    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 11:06:17,992     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 11:06:17,992    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 11:07:22,192     INFO __main__ Start RecordPersonalAccessETL
+2021-05-14 11:07:22,192    DEBUG __main__ main()
+2021-05-14 11:07:22,192     INFO apitep_utils.etl Init Integration
+2021-05-14 11:07:22,192    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 11:07:22,192     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:07:22,192    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 11:07:22,192     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:07:22,192    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:07:22,193     INFO root Check if path exists
+2021-05-14 11:07:22,193    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_record_personal_access.csv)
+2021-05-14 11:07:22,193     INFO root Check if path exists
+2021-05-14 11:07:22,193    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv)
+2021-05-14 11:07:22,193     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:07:22,193    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:07:22,219     INFO __main__ Process record_personal_access data
+2021-05-14 11:07:22,219    DEBUG __main__ RecordPersonalAccessETL.process()
+2021-05-14 11:07:22,219    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 11:07:22,219     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:07:22,219    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:07:22,263     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:07:22,263    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=7716 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv)
+2021-05-14 11:07:22,263     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:07:22,263    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=7716 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv)
+2021-05-14 11:07:22,761    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.html
+2021-05-14 11:07:36,890     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:07:36,891    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=7716 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv)
+2021-05-14 11:07:43,027     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 11:07:43,027    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 12:00:04,726     INFO __main__ Start RecordPersonalAccessETL
+2021-05-14 12:00:04,726    DEBUG __main__ main()
+2021-05-14 12:00:04,726     INFO apitep_utils.etl Init Integration
+2021-05-14 12:00:04,726    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 12:00:04,726     INFO apitep_utils.data_processor Init data processor
+2021-05-14 12:00:04,726    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 12:00:04,726     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 12:00:04,726    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 12:00:04,727     INFO root Check if path exists
+2021-05-14 12:00:04,727    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv)
+2021-05-14 12:00:04,727     INFO root Check if path exists
+2021-05-14 12:00:04,727    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 12:00:04,727     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 12:00:04,727    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 12:00:04,736     INFO __main__ Process record_personal_access data
+2021-05-14 12:00:04,736    DEBUG __main__ RecordPersonalAccessETL.process()
+2021-05-14 12:00:04,736    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 12:00:04,736     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 12:00:04,736    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 12:00:04,766     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 12:00:04,766    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=5425 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 12:00:04,766     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 12:00:04,766    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 12:00:05,267    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.html
+2021-05-14 12:00:16,662     INFO __main__ Start RecordPersonalAccessETL
+2021-05-14 12:00:16,662    DEBUG __main__ main()
+2021-05-14 12:00:16,662     INFO apitep_utils.etl Init Integration
+2021-05-14 12:00:16,662    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 12:00:16,662     INFO apitep_utils.data_processor Init data processor
+2021-05-14 12:00:16,662    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 12:00:16,662     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 12:00:16,662    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 12:00:16,663     INFO root Check if path exists
+2021-05-14 12:00:16,663    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_record_personal_access.csv)
+2021-05-14 12:00:16,663     INFO root Check if path exists
+2021-05-14 12:00:16,663    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv)
+2021-05-14 12:00:16,663     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 12:00:16,663    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 12:00:16,676     INFO __main__ Process record_personal_access data
+2021-05-14 12:00:16,676    DEBUG __main__ RecordPersonalAccessETL.process()
+2021-05-14 12:00:16,676    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 12:00:16,676     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 12:00:16,676    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 12:00:16,723     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 12:00:16,723    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=7716 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv)
+2021-05-14 12:00:16,723     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 12:00:16,723    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=7716 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv)
+2021-05-14 12:00:17,222    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.html
+2021-05-14 12:00:20,662     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 12:00:20,662    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=5425 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-05-14 12:00:26,621     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 12:00:26,621    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 12:00:33,307     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 12:00:33,307    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=7716 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv)
+2021-05-14 12:00:39,002     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 12:00:39,002    DEBUG apitep_utils.data_processor DataProcessor.log_changes()

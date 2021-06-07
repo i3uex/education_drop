@@ -1,0 +1,332 @@
+2021-05-14 09:16:44,871     INFO __main__ Start PlanSubCallETL
+2021-05-14 09:16:44,871    DEBUG __main__ main()
+2021-05-14 09:16:44,871     INFO apitep_utils.etl Init Integration
+2021-05-14 09:16:44,871    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=None)
+2021-05-14 09:16:44,871     INFO apitep_utils.data_processor Init data processor
+2021-05-14 09:16:44,871    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=None, report_path=None)
+2021-05-14 09:16:44,871     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 09:16:44,871    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 09:16:44,871     INFO root Check if path exists
+2021-05-14 09:16:44,871    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 09:16:44,871     INFO root Check if path exists
+2021-05-14 09:16:44,871    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 09:16:44,872     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 09:16:44,872    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 09:16:45,056     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 09:16:45,056    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 09:16:45,056     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 09:16:45,056    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 09:16:45,541    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.html
+2021-05-14 09:17:00,705     INFO __main__ Process plan_subject_call data
+2021-05-14 09:17:00,705    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 09:17:00,705    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 09:17:00,705     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 09:17:00,705    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 09:17:01,486     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 09:17:01,486    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 09:17:01,486     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 09:17:01,486    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 09:17:01,486    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_plan_subject_call.html
+2021-05-14 09:17:15,501     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 09:17:15,502    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 10:20:13,125     INFO __main__ Start PlanSubCallETL
+2021-05-14 10:20:13,125    DEBUG __main__ main()
+2021-05-14 10:20:13,125     INFO apitep_utils.etl Init Integration
+2021-05-14 10:20:13,125    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=None)
+2021-05-14 10:20:13,125     INFO apitep_utils.data_processor Init data processor
+2021-05-14 10:20:13,125    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=None, report_path=None)
+2021-05-14 10:20:13,125     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 10:20:13,125    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 10:20:13,125     INFO root Check if path exists
+2021-05-14 10:20:13,125    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 10:20:13,125     INFO root Check if path exists
+2021-05-14 10:20:13,126    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 10:20:13,126     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 10:20:13,126    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 10:20:13,289     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 10:20:13,290    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 10:20:13,290     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 10:20:13,290    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 10:20:13,746    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.html
+2021-05-14 10:20:28,612     INFO __main__ Process plan_subject_call data
+2021-05-14 10:20:28,612    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 10:20:28,612    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 10:20:28,612     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 10:20:28,612    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 10:20:29,381     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 10:20:29,381    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 10:20:29,381     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 10:20:29,381    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 10:20:29,381    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/pr_polytechnic_plan_subject_call.html
+2021-05-14 10:20:42,825     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 10:20:42,825    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 11:05:00,942     INFO __main__ Start PlanSubCallETL
+2021-05-14 11:05:00,942    DEBUG __main__ main()
+2021-05-14 11:05:00,942     INFO apitep_utils.etl Init Integration
+2021-05-14 11:05:00,942    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=None)
+2021-05-14 11:05:00,942     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:05:00,942    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=None, report_path=None)
+2021-05-14 11:05:00,942     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:05:00,942    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:05:00,943     INFO root Check if path exists
+2021-05-14 11:05:00,943    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 11:05:00,943     INFO root Check if path exists
+2021-05-14 11:05:00,943    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:05:00,943     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:05:00,943    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:05:01,106     INFO __main__ Process plan_subject_call data
+2021-05-14 11:05:01,106    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 11:05:01,106    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 11:05:01,106     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:05:01,106    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:05:01,819     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:05:01,819    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:05:01,819     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:05:01,819    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:05:02,279    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.html
+2021-05-14 11:05:17,075     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 11:05:17,075    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 11:05:51,685     INFO __main__ Start PlanSubCallETL
+2021-05-14 11:05:51,685    DEBUG __main__ main()
+2021-05-14 11:05:51,685     INFO apitep_utils.etl Init Integration
+2021-05-14 11:05:51,685    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 11:05:51,685     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:05:51,685    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 11:05:51,685     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:05:51,685    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:05:51,686     INFO root Check if path exists
+2021-05-14 11:05:51,686    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 11:05:51,686     INFO root Check if path exists
+2021-05-14 11:05:51,686    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:05:51,686     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:05:51,686    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:05:51,855     INFO __main__ Process plan_subject_call data
+2021-05-14 11:05:51,856    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 11:05:51,856    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 11:05:51,856     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:05:51,856    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:05:52,589     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:05:52,589    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:05:52,589     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:05:52,589    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:05:53,053    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.html
+2021-05-14 11:06:09,622     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:06:09,622    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:06:20,225     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 11:06:20,225    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 11:06:29,872     INFO __main__ Start PlanSubCallETL
+2021-05-14 11:06:29,872    DEBUG __main__ main()
+2021-05-14 11:06:29,872     INFO apitep_utils.etl Init Integration
+2021-05-14 11:06:29,872    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 11:06:29,872     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:06:29,872    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 11:06:29,872     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:06:29,872    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:06:29,873     INFO root Check if path exists
+2021-05-14 11:06:29,873    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 11:06:29,873     INFO root Check if path exists
+2021-05-14 11:06:29,873    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:06:29,873     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:06:29,873    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:06:30,066     INFO __main__ Process plan_subject_call data
+2021-05-14 11:06:30,066    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 11:06:30,066    DEBUG apitep_utils.data_processor - time: 0.0002 s
+2021-05-14 11:06:30,066     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:06:30,067    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:06:30,812     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:06:30,812    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:06:30,812     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:06:30,812    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:06:31,283    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.html
+2021-05-14 11:07:12,909     INFO __main__ Start PlanSubCallETL
+2021-05-14 11:07:12,909    DEBUG __main__ main()
+2021-05-14 11:07:12,909     INFO apitep_utils.etl Init Integration
+2021-05-14 11:07:12,909    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 11:07:12,909     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:07:12,909    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 11:07:12,909     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:07:12,909    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:07:12,910     INFO root Check if path exists
+2021-05-14 11:07:12,910    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_plan_subject_call.csv)
+2021-05-14 11:07:12,910     INFO root Check if path exists
+2021-05-14 11:07:12,910    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.csv)
+2021-05-14 11:07:12,910     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:07:12,910    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:07:13,140     INFO __main__ Process plan_subject_call data
+2021-05-14 11:07:13,140    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 11:07:13,140    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 11:07:13,140     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:07:13,140    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:07:13,963     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:07:13,963    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=235636 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.csv)
+2021-05-14 11:07:13,963     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:07:13,963    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=235636 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.csv)
+2021-05-14 11:07:14,428    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.html
+2021-05-14 11:07:32,281     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:07:32,281    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=235636 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.csv)
+2021-05-14 11:07:43,899     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 11:07:43,899    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 11:50:05,001     INFO __main__ Start PlanSubCallETL
+2021-05-14 11:50:05,001    DEBUG __main__ main()
+2021-05-14 11:50:05,001     INFO apitep_utils.etl Init Integration
+2021-05-14 11:50:05,001    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 11:50:05,001     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:50:05,001    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 11:50:05,001     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:50:05,001    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:50:05,002     INFO root Check if path exists
+2021-05-14 11:50:05,002    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 11:50:05,002     INFO root Check if path exists
+2021-05-14 11:50:05,002    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:50:05,002     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:50:05,002    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:50:05,170     INFO __main__ Process plan_subject_call data
+2021-05-14 11:50:05,170    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 11:50:05,170    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 11:50:05,170     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:50:05,170    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:50:05,897     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:50:05,897    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:50:05,897     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:50:05,897    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:50:06,364    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.html
+2021-05-14 11:50:21,096     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:50:21,096    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:51:46,112     INFO __main__ Start PlanSubCallETL
+2021-05-14 11:51:46,112    DEBUG __main__ main()
+2021-05-14 11:51:46,113     INFO apitep_utils.etl Init Integration
+2021-05-14 11:51:46,113    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 11:51:46,113     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:51:46,113    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 11:51:46,113     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:51:46,113    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:51:46,113     INFO root Check if path exists
+2021-05-14 11:51:46,113    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 11:51:46,113     INFO root Check if path exists
+2021-05-14 11:51:46,113    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:51:46,113     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:51:46,113    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:51:46,284     INFO __main__ Process plan_subject_call data
+2021-05-14 11:51:46,285    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 11:51:46,285    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 11:51:46,285     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:51:46,285    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:51:47,012     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:51:47,012    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:51:47,012     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:51:47,012    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:51:47,484    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.html
+2021-05-14 11:52:02,349     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:52:02,349    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:54:42,842     INFO __main__ Start PlanSubCallETL
+2021-05-14 11:54:42,842    DEBUG __main__ main()
+2021-05-14 11:54:42,842     INFO apitep_utils.etl Init Integration
+2021-05-14 11:54:42,842    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 11:54:42,842     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:54:42,842    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 11:54:42,842     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:54:42,842    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:54:42,842     INFO root Check if path exists
+2021-05-14 11:54:42,842    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 11:54:42,842     INFO root Check if path exists
+2021-05-14 11:54:42,842    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:54:42,842     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:54:42,842    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:54:43,017     INFO __main__ Process plan_subject_call data
+2021-05-14 11:54:43,017    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 11:54:43,017    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 11:54:43,017     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:54:43,017    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:54:43,732     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:54:43,732    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:54:43,732     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:54:43,732    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:54:44,195    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.html
+2021-05-14 11:54:59,020     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:54:59,020    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:55:08,572     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 11:55:08,573    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 11:56:49,242     INFO __main__ Start PlanSubCallETL
+2021-05-14 11:56:49,242    DEBUG __main__ main()
+2021-05-14 11:56:49,242     INFO apitep_utils.etl Init Integration
+2021-05-14 11:56:49,242    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 11:56:49,242     INFO apitep_utils.data_processor Init data processor
+2021-05-14 11:56:49,242    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 11:56:49,242     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 11:56:49,242    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 11:56:49,243     INFO root Check if path exists
+2021-05-14 11:56:49,243    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 11:56:49,243     INFO root Check if path exists
+2021-05-14 11:56:49,243    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:56:49,243     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 11:56:49,243    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 11:56:49,409     INFO __main__ Process plan_subject_call data
+2021-05-14 11:56:49,409    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 11:56:49,409    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 11:56:49,409     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 11:56:49,409    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 11:56:50,139     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 11:56:50,139    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:56:50,139     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:56:50,139    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:56:50,610    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.html
+2021-05-14 11:57:05,664     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 11:57:05,664    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 11:57:15,126     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 11:57:15,126    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 12:00:11,641     INFO __main__ Start PlanSubCallETL
+2021-05-14 12:00:11,641    DEBUG __main__ main()
+2021-05-14 12:00:11,641     INFO apitep_utils.etl Init Integration
+2021-05-14 12:00:11,641    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 12:00:11,641     INFO apitep_utils.data_processor Init data processor
+2021-05-14 12:00:11,641    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path=None)
+2021-05-14 12:00:11,641     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 12:00:11,641    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 12:00:11,642     INFO root Check if path exists
+2021-05-14 12:00:11,642    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_plan_subject_call.csv)
+2021-05-14 12:00:11,642     INFO root Check if path exists
+2021-05-14 12:00:11,642    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.csv)
+2021-05-14 12:00:11,642     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 12:00:11,642    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 12:00:11,854     INFO __main__ Process plan_subject_call data
+2021-05-14 12:00:11,854    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 12:00:11,854    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 12:00:11,854     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 12:00:11,854    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 12:00:12,810     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 12:00:12,810    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=235636 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.csv)
+2021-05-14 12:00:12,810     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 12:00:12,810    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=235636 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.csv)
+2021-05-14 12:00:13,518    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.html
+2021-05-14 12:00:32,645     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 12:00:32,645    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=235636 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Plan_Subject_Call/pr_teaching_plan_subject_call.csv)
+2021-05-14 12:00:44,655     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 12:00:44,656    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-05-14 12:07:59,346     INFO __main__ Start PlanSubCallETL
+2021-05-14 12:07:59,346    DEBUG __main__ main()
+2021-05-14 12:07:59,346     INFO apitep_utils.etl Init Integration
+2021-05-14 12:07:59,346    DEBUG apitep_utils.etl Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both)
+2021-05-14 12:07:59,346     INFO apitep_utils.data_processor Init data processor
+2021-05-14 12:07:59,346    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=False, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None)
+2021-05-14 12:07:59,346     INFO apitep_utils.data_processor Get data processor arguments
+2021-05-14 12:07:59,346    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-05-14 12:07:59,346     INFO root Check if path exists
+2021-05-14 12:07:59,346    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv)
+2021-05-14 12:07:59,346     INFO root Check if path exists
+2021-05-14 12:07:59,346    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 12:07:59,346     INFO apitep_utils.data_processor Load input dataset
+2021-05-14 12:07:59,346    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-05-14 12:07:59,514     INFO __main__ Process plan_subject_call data
+2021-05-14 12:07:59,515    DEBUG __main__ PlanSubCallETL.process()
+2021-05-14 12:07:59,515    DEBUG apitep_utils.data_processor - time: 0.0001 s
+2021-05-14 12:07:59,515     INFO apitep_utils.data_processor Save output dataset
+2021-05-14 12:07:59,515    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-05-14 12:08:00,250     INFO apitep_utils.data_processor Save dataset report
+2021-05-14 12:08:00,250    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=194569 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 12:08:00,251     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 12:08:00,251    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 12:08:00,726    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.html
+2021-05-14 12:08:15,718     INFO apitep_utils.data_processor Save dataset standard report
+2021-05-14 12:08:15,718    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=194569 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv)
+2021-05-14 12:08:25,128     INFO apitep_utils.data_processor Log dataset changes
+2021-05-14 12:08:25,128    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
