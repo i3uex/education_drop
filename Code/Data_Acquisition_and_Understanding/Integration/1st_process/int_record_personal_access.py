@@ -23,6 +23,7 @@ class RecordPersonalAccessIntegration(Integration):
         pr_teaching_record_personal_access['facultad'] = 'PROFESORADO'
 
         self.output_df = pd.concat([pr_polytechnic_record_personal_access, pr_teaching_record_personal_access], axis=0)
+        log.info("columns of final dataset are:" + self.output_df.columns)
 
 
 def main():
