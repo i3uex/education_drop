@@ -16,9 +16,6 @@ class RecordPersonalAccessFeatureEngineering(FeatureEngineering):
         log.info("Feature Engineering of int_record_personal_access data")
         log.debug("RecordPersonalAccessFeatureEngineering.process()")
 
-        self.input_df['tipo_traslado'] = self.input_df['tipo_traslado'].apply(
-            lambda func: 'N' if pd.isna(func) else func)
-
         analys_columns = ['des_plan', 'anio_apertura_expediente', 'abandona', 'convocatoria_acceso', 'des_acceso',
                           'nota_admision_def', 'sexo', 'anio_nacimiento', 'provincia', 'municipio', 'facultad']
 

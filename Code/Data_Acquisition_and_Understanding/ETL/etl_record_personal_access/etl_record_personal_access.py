@@ -69,6 +69,11 @@ class RecordPersonalAccessETL(ETL):
         self.input_df.rename(columns={keys.BIRTH_DATE_KEY: keys.BIRTH_YEAR_KEY}, inplace=True)
         self.changes["get only year of birth date"] = rows_after
 
+        rows_affected = len(self.input_df[pd.isna(self.input_df['tipo_traslado'])].index)
+        self.input_df['tipo_traslado'] = self.input_df['tipo_traslado'].apply(
+            lambda func: 'N' if pd.isna(func) else func)
+        self.changes["resolve values null of tipo_tralado column"] = rows_affected
+
         log.info("columns of final dataset are:" + self.input_df.columns)
 
         self.output_df = self.input_df
