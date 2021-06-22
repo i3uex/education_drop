@@ -92,7 +92,6 @@ def main():
         input_separator="|",
         output_separator="|",
         report_type=ETL.ReportType.Both,
-        save_report_on_load=False,
         school_kind=school_kind
     )
     etl.execute()
