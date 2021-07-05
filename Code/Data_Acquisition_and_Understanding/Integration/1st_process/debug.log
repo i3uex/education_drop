@@ -1,0 +1,58 @@
+2021-06-22 11:16:58,480     INFO __main__ Start RecordPersonalAccessIntegration
+2021-06-22 11:16:58,480    DEBUG __main__ main()
+2021-06-22 11:16:58,480     INFO apitep_utils.integration Init Integration
+2021-06-22 11:16:58,480    DEBUG apitep_utils.integration Integration.__init__(input_path_segments=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both)
+2021-06-22 11:16:58,480     INFO apitep_utils.data_processor Init data processor
+2021-06-22 11:16:58,480    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None, input_type_excel=None)
+2021-06-22 11:16:58,480     INFO apitep_utils.integration Execute Integration
+2021-06-22 11:16:58,480    DEBUG apitep_utils.integration Integration.execute()
+2021-06-22 11:16:58,480     INFO apitep_utils.integration Get integration arguments
+2021-06-22 11:16:58,480    DEBUG apitep_utils.integration Integration.parse_arguments()
+2021-06-22 11:16:58,480     INFO root Check if path exists
+2021-06-22 11:16:58,480    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv)
+2021-06-22 11:16:58,480     INFO root Check if path exists
+2021-06-22 11:16:58,480    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Record_personal_access/pr_teaching_record_personal_access.csv)
+2021-06-22 11:16:58,480     INFO root Check if path exists
+2021-06-22 11:16:58,480    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Integrated/1st_process/int_record_personal_access.csv)
+2021-06-22 11:16:58,481     INFO apitep_utils.integration Load input datasets
+2021-06-22 11:16:58,481    DEBUG apitep_utils.integration Integration.load()
+2021-06-22 11:16:58,505     INFO __main__ Integration UniversityDegrees data
+2021-06-22 11:16:58,505    DEBUG __main__ UniversityDegreesIntegration.process()
+2021-06-22 11:16:58,511     INFO __main__ Index(['columns of final dataset are:expediente',
+       'columns of final dataset are:cod_plan',
+       'columns of final dataset are:des_plan',
+       'columns of final dataset are:anio_apertura_expediente',
+       'columns of final dataset are:exp_cerrado',
+       'columns of final dataset are:exp_trasladado',
+       'columns of final dataset are:tipo_traslado',
+       'columns of final dataset are:exp_bloqueado',
+       'columns of final dataset are:abandona',
+       'columns of final dataset are:anio_convocatoria_acceso',
+       'columns of final dataset are:convocatoria_acceso',
+       'columns of final dataset are:acceso',
+       'columns of final dataset are:des_acceso',
+       'columns of final dataset are:sub_acceso',
+       'columns of final dataset are:des_subacesso',
+       'columns of final dataset are:nota_acceso',
+       'columns of final dataset are:nota_admision_def',
+       'columns of final dataset are:centro_escolar_acceso',
+       'columns of final dataset are:sexo',
+       'columns of final dataset are:anio_nacimiento',
+       'columns of final dataset are:cod_provincia',
+       'columns of final dataset are:provincia',
+       'columns of final dataset are:cod_municipio',
+       'columns of final dataset are:municipio',
+       'columns of final dataset are:facultad'],
+      dtype='object')
+2021-06-22 11:16:58,511    DEBUG apitep_utils.data_processor - time: 0.0067 s
+2021-06-22 11:16:58,511     INFO apitep_utils.data_processor Save output dataset
+2021-06-22 11:16:58,512    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-06-22 11:16:58,575     INFO apitep_utils.data_processor Save dataset report
+2021-06-22 11:16:58,575    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=12797 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Integrated/1st_process/int_record_personal_access.csv)
+2021-06-22 11:16:58,575     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:16:58,575    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=12797 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Integrated/1st_process/int_record_personal_access.csv)
+2021-06-22 11:16:59,074    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Integrated/1st_process/int_record_personal_access.html
+2021-06-22 11:17:16,784     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:17:16,784    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=12797 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Integrated/1st_process/int_record_personal_access.csv)
+2021-06-22 11:17:27,619     INFO apitep_utils.data_processor Log dataset changes
+2021-06-22 11:17:27,620    DEBUG apitep_utils.data_processor DataProcessor.log_changes()

@@ -1,0 +1,168 @@
+2021-06-22 11:14:41,392     INFO apitep_utils.etl Init ETL
+2021-06-22 11:14:41,392    DEBUG apitep_utils.etl ETL.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None, input_type_excel=None)
+2021-06-22 11:14:41,392     INFO apitep_utils.data_processor Init data processor
+2021-06-22 11:14:41,392    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None, input_type_excel=None)
+2021-06-22 11:14:41,392     INFO apitep_utils.etl Execute ETL
+2021-06-22 11:14:41,392    DEBUG apitep_utils.etl ETL.execute()
+2021-06-22 11:14:41,392     INFO apitep_utils.data_processor Get data processor arguments
+2021-06-22 11:14:41,392    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-06-22 11:14:41,392     INFO root Check if path exists
+2021-06-22 11:14:41,392    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-22 11:14:41,393     INFO root Check if path exists
+2021-06-22 11:14:41,393    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-22 11:14:41,393     INFO apitep_utils.data_processor Load input dataset
+2021-06-22 11:14:41,393    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-06-22 11:14:41,402     INFO apitep_utils.data_processor Save dataset report
+2021-06-22 11:14:41,402    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=21596 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-22 11:14:41,402     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:14:41,402    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=21596 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-22 11:14:41,894    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.html
+2021-06-22 11:14:44,932     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:14:44,933    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=21596 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-22 11:14:47,520     INFO __main__ Process scholarship_per_year data
+2021-06-22 11:14:47,521    DEBUG __main__ ScolarshipPerYearETL.process()
+2021-06-22 11:14:47,524     INFO __main__ Index(['columns of final dataset are:expediente',
+       'columns of final dataset are:curso_academico',
+       'columns of final dataset are:cod_plan',
+       'columns of final dataset are:des_plan',
+       'columns of final dataset are:becario'],
+      dtype='object')
+2021-06-22 11:14:47,524    DEBUG apitep_utils.data_processor - time: 0.0037 s
+2021-06-22 11:14:47,524     INFO apitep_utils.data_processor Save output dataset
+2021-06-22 11:14:47,524    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-06-22 11:14:47,567     INFO apitep_utils.data_processor Save dataset report
+2021-06-22 11:14:47,567    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=21194 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-22 11:14:47,567     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:14:47,567    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=21194 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-22 11:14:47,567    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.html
+2021-06-22 11:14:50,966     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:14:50,966    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=21194 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-22 11:14:53,302     INFO apitep_utils.data_processor Log dataset changes
+2021-06-22 11:14:53,302    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-06-22 11:14:53,302     INFO apitep_utils.data_processor - delete data of old degrees: 402
+2021-06-22 11:25:57,771     INFO apitep_utils.etl Init ETL
+2021-06-22 11:25:57,771    DEBUG apitep_utils.etl ETL.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None, input_type_excel=None)
+2021-06-22 11:25:57,771     INFO apitep_utils.data_processor Init data processor
+2021-06-22 11:25:57,771    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None, input_type_excel=None)
+2021-06-22 11:25:57,771     INFO apitep_utils.etl Execute ETL
+2021-06-22 11:25:57,771    DEBUG apitep_utils.etl ETL.execute()
+2021-06-22 11:25:57,771     INFO apitep_utils.data_processor Get data processor arguments
+2021-06-22 11:25:57,771    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-06-22 11:25:57,771     INFO root Check if path exists
+2021-06-22 11:25:57,771    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv)
+2021-06-22 11:25:57,771     INFO root Check if path exists
+2021-06-22 11:25:57,771    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv)
+2021-06-22 11:25:57,771     INFO apitep_utils.data_processor Load input dataset
+2021-06-22 11:25:57,771    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-06-22 11:25:57,779     INFO apitep_utils.data_processor Save dataset report
+2021-06-22 11:25:57,780    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=15760 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv)
+2021-06-22 11:25:57,780     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:25:57,780    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=15760 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv)
+2021-06-22 11:25:58,261    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_scholarship_per_year.html
+2021-06-22 11:26:01,225     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:26:01,225    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=15760 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv)
+2021-06-22 11:26:03,708     INFO __main__ Process scholarship_per_year data
+2021-06-22 11:26:03,708    DEBUG __main__ ScolarshipPerYearETL.process()
+2021-06-22 11:26:03,712     INFO __main__ Index(['columns of final dataset are:expediente',
+       'columns of final dataset are:curso_academico',
+       'columns of final dataset are:cod_plan',
+       'columns of final dataset are:des_plan',
+       'columns of final dataset are:becario'],
+      dtype='object')
+2021-06-22 11:26:03,712    DEBUG apitep_utils.data_processor - time: 0.0039 s
+2021-06-22 11:26:03,712     INFO apitep_utils.data_processor Save output dataset
+2021-06-22 11:26:03,712    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-06-22 11:26:03,739     INFO apitep_utils.data_processor Save dataset report
+2021-06-22 11:26:03,739    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=15760 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv)
+2021-06-22 11:26:03,739     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:26:03,739    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=15760 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv)
+2021-06-22 11:26:03,739    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.html
+2021-06-22 11:26:06,376     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:26:06,376    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=15760 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv)
+2021-06-22 11:26:08,558     INFO apitep_utils.data_processor Log dataset changes
+2021-06-22 11:26:08,558    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-06-22 11:26:08,558     INFO apitep_utils.data_processor - delete data of old degrees: 0
+2021-06-22 11:27:16,098     INFO apitep_utils.etl Init ETL
+2021-06-22 11:27:16,098    DEBUG apitep_utils.etl ETL.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None, input_type_excel=None)
+2021-06-22 11:27:16,098     INFO apitep_utils.data_processor Init data processor
+2021-06-22 11:27:16,098    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None, input_type_excel=None)
+2021-06-22 11:27:16,098     INFO apitep_utils.etl Execute ETL
+2021-06-22 11:27:16,098    DEBUG apitep_utils.etl ETL.execute()
+2021-06-22 11:27:16,098     INFO apitep_utils.data_processor Get data processor arguments
+2021-06-22 11:27:16,098    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-06-22 11:27:16,099     INFO root Check if path exists
+2021-06-22 11:27:16,099    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-22 11:27:16,099     INFO root Check if path exists
+2021-06-22 11:27:16,099    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-22 11:27:16,099     INFO apitep_utils.data_processor Load input dataset
+2021-06-22 11:27:16,099    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-06-22 11:27:16,109     INFO apitep_utils.data_processor Save dataset report
+2021-06-22 11:27:16,109    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=21596 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-22 11:27:16,109     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:27:16,109    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=21596 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-22 11:27:16,587    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.html
+2021-06-22 11:27:19,546     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:27:19,546    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=21596 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-22 11:27:22,098     INFO __main__ Process scholarship_per_year data
+2021-06-22 11:27:22,098    DEBUG __main__ ScolarshipPerYearETL.process()
+2021-06-22 11:27:22,101     INFO __main__ Index(['columns of final dataset are:expediente',
+       'columns of final dataset are:curso_academico',
+       'columns of final dataset are:cod_plan',
+       'columns of final dataset are:des_plan',
+       'columns of final dataset are:becario'],
+      dtype='object')
+2021-06-22 11:27:22,101    DEBUG apitep_utils.data_processor - time: 0.0034 s
+2021-06-22 11:27:22,101     INFO apitep_utils.data_processor Save output dataset
+2021-06-22 11:27:22,101    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-06-22 11:27:22,137     INFO apitep_utils.data_processor Save dataset report
+2021-06-22 11:27:22,137    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=21194 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-22 11:27:22,137     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:27:22,137    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=21194 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-22 11:27:22,138    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.html
+2021-06-22 11:27:25,344     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-22 11:27:25,344    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=21194 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-22 11:27:27,676     INFO apitep_utils.data_processor Log dataset changes
+2021-06-22 11:27:27,676    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-06-22 11:27:27,676     INFO apitep_utils.data_processor - delete data of old degrees: 402
+2021-06-24 13:20:12,152     INFO apitep_utils.etl Init ETL
+2021-06-24 13:20:12,159    DEBUG apitep_utils.etl ETL.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None, input_type_excel=None)
+2021-06-24 13:20:12,159     INFO apitep_utils.data_processor Init data processor
+2021-06-24 13:20:12,159    DEBUG apitep_utils.data_processor DataProcessor.__init__(input_path_segment=None, output_path_segment=None, input_separator=|, output_separator=|, save_report_on_load=None, save_report_on_save=None, report_type=ReportType.Both, report_path_segment=None, input_type_excel=None)
+2021-06-24 13:20:12,159     INFO apitep_utils.etl Execute ETL
+2021-06-24 13:20:12,159    DEBUG apitep_utils.etl ETL.execute()
+2021-06-24 13:20:12,159     INFO apitep_utils.data_processor Get data processor arguments
+2021-06-24 13:20:12,159    DEBUG apitep_utils.data_processor DataProcessor.parse_arguments()
+2021-06-24 13:20:12,160     INFO root Check if path exists
+2021-06-24 13:20:12,160    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-24 13:20:12,160     INFO root Check if path exists
+2021-06-24 13:20:12,160    DEBUG root ArgumentParserHelper.parse_data_file_path(data_file_path=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-24 13:20:12,160     INFO apitep_utils.data_processor Load input dataset
+2021-06-24 13:20:12,160    DEBUG apitep_utils.data_processor DataProcessor.load()
+2021-06-24 13:20:12,172     INFO apitep_utils.data_processor Save dataset report
+2021-06-24 13:20:12,172    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=21596 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-24 13:20:12,172     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-24 13:20:12,172    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=21596 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-24 13:20:12,746    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.html
+2021-06-24 13:20:16,169     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-24 13:20:16,169    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=21596 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv)
+2021-06-24 13:20:18,909     INFO __main__ Process scholarship_per_year data
+2021-06-24 13:20:18,909    DEBUG __main__ ScolarshipPerYearETL.process()
+2021-06-24 13:20:18,912     INFO __main__ Index(['columns of final dataset are:expediente',
+       'columns of final dataset are:curso_academico',
+       'columns of final dataset are:cod_plan',
+       'columns of final dataset are:des_plan',
+       'columns of final dataset are:becario'],
+      dtype='object')
+2021-06-24 13:20:18,913    DEBUG apitep_utils.data_processor - time: 0.0040 s
+2021-06-24 13:20:18,913     INFO apitep_utils.data_processor Save output dataset
+2021-06-24 13:20:18,913    DEBUG apitep_utils.data_processor DataProcessor.save()
+2021-06-24 13:20:18,951     INFO apitep_utils.data_processor Save dataset report
+2021-06-24 13:20:18,951    DEBUG apitep_utils.data_processor DataProcessor.save_report(dataframe=21194 rows, source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-24 13:20:18,951     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-24 13:20:18,951    DEBUG apitep_utils.data_processor DataProcessor.save_standard_report(df=21194 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-24 13:20:18,951    DEBUG apitep_utils.data_processor - output_path: /home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.html
+2021-06-24 13:20:22,670     INFO apitep_utils.data_processor Save dataset standard report
+2021-06-24 13:20:22,670    DEBUG apitep_utils.data_processor DataProcessor.save_advanced_report(df=21194 rows,source_path_segment=/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Teaching/Scolarship_per_year/pr_teaching_scholarship_per_year.csv)
+2021-06-24 13:20:25,453     INFO apitep_utils.data_processor Log dataset changes
+2021-06-24 13:20:25,453    DEBUG apitep_utils.data_processor DataProcessor.log_changes()
+2021-06-24 13:20:25,453     INFO apitep_utils.data_processor - delete data of old degrees: 402

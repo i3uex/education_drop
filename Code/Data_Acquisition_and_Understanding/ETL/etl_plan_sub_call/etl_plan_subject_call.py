@@ -1,7 +1,6 @@
 import logging
 from apitep_utils import ETL
 from apitep_utils.transformation import Transformation
-import pandas as pd
 from Code.data_model.titulation_kind import SchoolKind
 import keys
 
@@ -69,7 +68,7 @@ class PlanSubCallETL(ETL):
 
 
 def main():
-    school_kind = SchoolKind.Polytechnic
+    school_kind = SchoolKind.Teaching
 
     if school_kind is SchoolKind.Polytechnic:
         logging.basicConfig(
