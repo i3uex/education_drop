@@ -10,15 +10,18 @@ from data_model.school_kind import SchoolKind
 import pandas as pd
 from sklearn.model_selection import train_test_split, cross_val_score
 import sklearn.metrics as sklm
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.svm import SVC
 from sklearn.inspection import permutation_importance
 import plotly.express as px
 import plotly as py
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import GridSearchCV
 
 log = logging.getLogger(__name__)
 
 
-class QuadrimestersRandomForest(AnalysisModeling):
+class QuadrimestersEnsemble(AnalysisModeling):
     quadrimester: int = None
     course: int = None
     school_kind: SchoolKind = None
@@ -26,8 +29,39 @@ class QuadrimestersRandomForest(AnalysisModeling):
     model_number: str = None
     x_train: pd.DataFrame = None
     x_test: pd.DataFrame = None
+    x_train_norm: pd.DataFrame = None
+    x_test_norm: pd.DataFrame = None
     y_train: pd.Series = None
     y_test: pd.Series = None
+    y_pred: pd.Series = None
+    threshold: float = 0.47
+
+    def get_best_hyperparameters_RandomForest(self):
+        grid_params = {'max_depth': [8, 12],
+                       'n_estimators': [50, 100, 200]}
+        gs_RndForest = GridSearchCV(
+            RandomForestClassifier(random_state=123),
+            grid_params,
+            scoring='accuracy',
+            n_jobs=-1,
+            cv=4
+        )
+        gs_RndForest.fit(self.x_train, self.y_train)
+        return gs_RndForest.best_estimator_
+
+    def get_best_hyperparameters_SVM(self):
+        grid_params = {'C': [0.01, 0.1, 1, 10, 50, 100, 200],
+                       'gamma': [0.001, 0.01, 0.1, 1, 10]}
+
+        gs_SVM = GridSearchCV(
+            SVC(random_state=123),
+            grid_params,
+            scoring='accuracy',
+            n_jobs=-1,
+            cv=4
+        )
+        gs_SVM.fit(self.x_train_norm, self.y_train)
+        return gs_SVM.best_estimator_
 
     @staticmethod
     def print_cv_results(cv_estimate):
@@ -59,7 +93,7 @@ class QuadrimestersRandomForest(AnalysisModeling):
         """
 
         log.info("Get integration arguments")
-        log.debug("Integration.parse_arguments()")
+        log.debug("QuadrimestersEnsemble.parse_arguments()")
 
         argument_parser = argparse.ArgumentParser(description=self.description)
         argument_parser.add_argument("-i", "--input_path", required=True,
@@ -98,9 +132,9 @@ class QuadrimestersRandomForest(AnalysisModeling):
             log.info("Analysis of analys_record_personal_access data of school: " + self.school_kind.value)
         else:
             log.info("Analysis of analys_record_personal_access data of school: " + self.school_kind.value +
-                     "with data of course " + str(self.course) + " and quadrimester " + str(self.quadrimester))
+                     " with data of course " + str(self.course) + " and quadrimester " + str(self.quadrimester))
 
-        log.debug("QuadrimesterRandomForest.process()")
+        log.debug("QuadrimestersEnsemble.process()")
 
         if keys.CUM_MEDIAN_KEY in self.input_df.columns:
             median_bcket_array = np.array([0, 1.5, 3, 4.5, 6, 7.5, 9, 10])
@@ -129,6 +163,7 @@ class QuadrimestersRandomForest(AnalysisModeling):
             y = resample_df[keys.DROP_OUT_KEY]
             self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x, y, test_size=0.25,
                                                                                     random_state=24)
+
         elif self.course > 0:
             from imblearn.combine import SMOTETomek
             x_smt, y_smt = SMOTETomek().fit_sample(self.input_df.drop([keys.DROP_OUT_KEY], axis=1),
@@ -142,7 +177,7 @@ class QuadrimestersRandomForest(AnalysisModeling):
                                                     replace=False,
                                                     n_samples=1500,
                                                     random_state=123)
-            drop_out_data_upsampled = resample(no_drop_out_data,
+            drop_out_data_upsampled = resample(drop_out_data,
                                                replace=True,
                                                n_samples=1500,
                                                random_state=123)
@@ -151,61 +186,100 @@ class QuadrimestersRandomForest(AnalysisModeling):
             y = resample_df[keys.DROP_OUT_KEY]
             self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x, y, test_size=0.25,
                                                                                     random_state=24)
+        norm = MinMaxScaler().fit(self.x_train)
+        self.x_train_norm = norm.transform(self.x_train)
+        self.x_test_norm = norm.transform(self.x_test)
 
-        self.model_developed = GradientBoostingClassifier(random_state=123).fit(self.x_train, self.y_train)
+        self.models_developed.append(GradientBoostingClassifier(random_state=123).fit(self.x_train, self.y_train))
+        best_hyperparameters_RF = self.get_best_hyperparameters_RandomForest()
+        self.models_developed.append(RandomForestClassifier(
+            max_depth=best_hyperparameters_RF.max_depth,
+            n_estimators=best_hyperparameters_RF.n_estimators,
+            random_state=123).fit(self.x_train, self.y_train))
+        best_hyperparameters_SVM = self.get_best_hyperparameters_SVM()
+        self.models_developed.append(SVC(
+            C=best_hyperparameters_SVM.C,
+            gamma=best_hyperparameters_SVM.gamma,
+            probability=True, random_state=123).fit(self.x_train_norm, self.y_train))
 
-    def save(self):
-        y_pred = self.model_developed.predict(self.x_test)
+        pred_1 = self.models_developed[0].predict_proba(self.x_test)
+        pred_2 = self.models_developed[1].predict_proba(self.x_test)
+        pred_3 = self.models_developed[2].predict_proba(self.x_test_norm)
+        weighted_ensemble_pred = pred_1 * 0.7 + pred_2 * 0.15 + pred_3 * 0.15
+        y_pred = (weighted_ensemble_pred[0:, 1] >= self.threshold).astype(int)
 
         log.info("accuracy of model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
         log.info("confusion matrix of model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
         log.info("recall of model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
 
-        log.info("recall of model applying cross validation algorithm is: " + str(self.print_cv_results(
-            cross_val_score(self.model_developed, self.x_train, self.y_train, scoring='recall'))))
-
         x_test = self.input_df.drop([keys.DROP_OUT_KEY], axis=1)
         y_test = self.input_df[keys.DROP_OUT_KEY]
+        x_test_norm = norm.transform(x_test)
 
-        y_pred = self.model_developed.predict(x_test)
+        pred_1 = self.models_developed[0].predict_proba(x_test)
+        pred_2 = self.models_developed[1].predict_proba(x_test)
+        pred_3 = self.models_developed[2].predict_proba(x_test_norm)
+        weighted_ensemble_pred = pred_1 * 0.7 + pred_2 * 0.15 + pred_3 * 0.15
+        y_pred = (weighted_ensemble_pred[0:, 1] >= self.threshold).astype(int)
 
         log.info("accuracy of model with complete data is: " + str(sklm.accuracy_score(y_true=y_test, y_pred=y_pred)))
         log.info("confusion matrix of model with complete data is: \n" + str(sklm.confusion_matrix(y_true=y_test,
                                                                                                    y_pred=y_pred)))
         log.info("recall of model with complete data is: " + str(sklm.recall_score(y_true=y_test, y_pred=y_pred)))
 
-        feature_names = x_test.columns
-        result = permutation_importance(
-            self.model_developed, x_test, y_test, n_repeats=3, random_state=42, n_jobs=-1)
-        logit_importances = pd.Series(result.importances_mean, index=feature_names)
-        logit_importances = logit_importances[logit_importances > 0.001]
+        self.y_pred = y_pred
 
-        logit_importances = pd.DataFrame({'Feature': logit_importances.sort_values(ascending=False).index,
-                                          'Permutation_importance': logit_importances.sort_values(
-                                              ascending=False)}).reset_index(drop=True)
+    def save(self):
 
-        fig = px.bar(logit_importances, x='Feature', y='Permutation_importance')
+        feature_names = self.x_test.columns
+        fig = []
+        for model in self.models_developed:
+            if 'SVC' not in str(model):
+                result = permutation_importance(
+                    model, self.x_test, self.y_test, n_repeats=3, random_state=42, n_jobs=-1)
+            else:
+                result = permutation_importance(
+                    model, self.x_test_norm, self.y_test, n_repeats=3, random_state=42, n_jobs=-1)
+            logit_importances = pd.Series(result.importances_mean, index=feature_names)
+            logit_importances = logit_importances[logit_importances > 0.001]
+
+            logit_importances = pd.DataFrame({'Feature': logit_importances.sort_values(ascending=False).index,
+                                              'Permutation_importance': logit_importances.sort_values(
+                                                  ascending=False)}).reset_index(drop=True)
+
+            fig.append(px.bar(logit_importances, x='Feature', y='Permutation_importance'))
+
+            positive_correlation = []
+            negative_correlation = []
+            for feature in logit_importances['Feature']:
+                self.get_type_correlation(self.input_df[feature],
+                                          self.input_df[keys.DROP_OUT_KEY], positive_correlation,
+                                          negative_correlation)
+
+            log.info("features with positive correlation with target feature are: \n" + str(positive_correlation))
+            log.info("features with negative correlation with target feature are: \n" + str(negative_correlation))
+
         output_path = Path(self.output_path_segment)
         output_path_parent = output_path.parent
         if not output_path_parent.exists():
             output_path_parent.mkdir(parents=True)
 
         path_segment = str(output_path_parent)
+        output_path_plot = Path(path_segment) / 'gradient_boosting_feature_importances'
+        output_path_plot = output_path_plot.with_suffix(".html")
+        py.offline.plot(fig[0], filename=str(output_path_plot))
+
+        path_segment = str(output_path_parent)
         output_path_plot = Path(path_segment) / 'random_forest_feature_importances'
         output_path_plot = output_path_plot.with_suffix(".html")
-        py.offline.plot(fig, filename=str(output_path_plot))
+        py.offline.plot(fig[1], filename=str(output_path_plot))
 
-        positive_correlation = []
-        negative_correlation = []
-        for feature in logit_importances['Feature']:
-            self.get_type_correlation(self.input_df[feature],
-                                      self.input_df[keys.DROP_OUT_KEY], positive_correlation,
-                                      negative_correlation)
+        path_segment = str(output_path_parent)
+        output_path_plot = Path(path_segment) / 'SVC_feature_importances'
+        output_path_plot = output_path_plot.with_suffix(".html")
+        py.offline.plot(fig[2], filename=str(output_path_plot))
 
-        log.info("features with positive correlation with target feature are: \n" + str(positive_correlation))
-        log.info("features with negative correlation with target feature are: \n" + str(negative_correlation))
-
-        self.final_analys_record_personal_access[self.model_number] = y_pred
+        self.final_analys_record_personal_access[self.model_number] = self.y_pred
 
         self.final_analys_record_personal_access.to_csv(
             self.output_path_segment,
@@ -221,10 +295,10 @@ def main():
     logging.getLogger("matplotlib").setLevel(logging.ERROR)
 
     log.info("--------------------------------------------------------------------------------------")
-    log.info("Start QuadrimestersRandomForest")
+    log.info("Start QuadrimestersEnsemble")
     log.debug("main()")
 
-    analys = QuadrimestersRandomForest(
+    analys = QuadrimestersEnsemble(
         input_separator='|',
         output_separator='|'
     )
