@@ -103,21 +103,17 @@ class RecordPersonalAccessETL(ETL):
         rows_before = len(self.input_dfs[0].index)
         df_filter = self.input_dfs[0].apply(delete_people_without_all_information, axis=1)
         self.input_dfs[0] = self.input_dfs[0][df_filter]
-        self.input_dfs[0] = self.input_dfs[0][self.input_dfs[0][keys.OPEN_YEAR_PLAN_KEY].isin(no_valid_courses) == False]
+        self.input_dfs[0] = self.input_dfs[0][self.input_dfs[0][keys.OPEN_YEAR_PLAN_KEY].isin(no_valid_courses)
+                                              == False]
         rows_after = len(self.input_dfs[0].index)
         self.changes["delete data of people without all information"] = rows_before - rows_after
-
-        self.input_dfs[0][keys.BIRTH_DATE_KEY] = pd.to_datetime(self.input_dfs[0][keys.BIRTH_DATE_KEY])
-        self.input_dfs[0][keys.BIRTH_DATE_KEY] = self.input_dfs[0][keys.BIRTH_DATE_KEY].apply(lambda func: func.year)
-        self.input_dfs[0].rename(columns={keys.BIRTH_DATE_KEY: keys.BIRTH_YEAR_KEY}, inplace=True)
-        self.changes["get only year of birth date"] = rows_after
 
         rows_affected = len(self.input_dfs[0][pd.isna(self.input_dfs[0][keys.TRANSFER_TYPE_KEY])].index)
         self.input_dfs[0][keys.TRANSFER_TYPE_KEY] = self.input_dfs[0][keys.TRANSFER_TYPE_KEY].apply(
             lambda func: 'N' if pd.isna(func) else func)
         self.changes["resolve values null of tipo_tralado column"] = rows_affected
 
-        log.info("columns of final dataset are:" + self.input_dfs[0].columns)
+        log.info("columns of final dataset are:" + str(self.input_dfs[0].columns))
         log.info("final number of rows: " + str(len(self.input_dfs[0].index)))
 
         self.output_df = self.input_dfs[0]
@@ -131,14 +127,15 @@ def main():
         format="%(asctime)-15s %(levelname)8s %(name)s %(message)s")
     logging.getLogger("matplotlib").setLevel(logging.ERROR)
 
+    log.info("--------------------------------------------------------------------------------------")
     log.info("Start RecordPersonalAccessETL")
     log.debug("main()")
 
     etl = RecordPersonalAccessETL(
         input_separator="|",
         output_separator="|",
-        save_report_on_save=False,
-        save_report_on_load=False,
+        save_report_on_save=True,
+        save_report_on_load=True,
         report_type=ETL.ReportType.Both,
     )
     etl.execute()
