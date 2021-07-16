@@ -1,10 +1,12 @@
 # CSV Columns Keys
 PLAN_DESCRIPTION_KEY = "des_plan"
 RECORD_KEY = "expediente"
+AGE_KEY = "edad"
 BIRTH_DATE_KEY = "fecha_nacimiento"
 BIRTH_YEAR_KEY = "anio_nacimiento"
 BIRTH_YEAR_INTERVAL_KEY = "anio_nacimiento_interval"
 OPEN_YEAR_PLAN_KEY = "anio_apertura_expediente"
+OPEN_DATE_PLAN_KEY = "fecha_apertura_expediente"
 ACCESS_CALL_KEY = "convocatoria_acceso"
 ACCESS_DESCRIPTION_KEY = "des_acceso"
 GENDER_KEY = "sexo"
