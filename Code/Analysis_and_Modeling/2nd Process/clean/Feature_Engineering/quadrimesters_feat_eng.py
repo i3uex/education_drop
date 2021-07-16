@@ -22,11 +22,17 @@ def get_cum_p_data_plan_subj_call(p: pd.Series, course: int, quadrimester: int):
 
         p_data = p_data[p_data['curso_academico'].isin(courses)]
         if quadrimester == 1:
-            quadrimester_data = p_data[(p_data['curso_academico'] == courses[course - 1]) &
-                                       (p_data['semestre'] == '1S')].index
+            try:
+                quadrimester_data = p_data[(p_data['curso_academico'] == courses[course - 1]) &
+                                           (p_data['semestre'] == '1S')].index
+            except:
+                return pd.Series()
         elif quadrimester == 2:
-            quadrimester_data = p_data[(p_data['curso_academico'] == courses[course - 1]) &
-                                       (p_data['semestre'] == '2S')].index
+            try:
+                quadrimester_data = p_data[(p_data['curso_academico'] == courses[course - 1]) &
+                                           (p_data['semestre'] == '2S')].index
+            except:
+                return pd.Series()
         else:
             raise NotImplementedError
 
@@ -46,10 +52,12 @@ def get_course_p_data_scholarship(p: pd.Series, course: int):
     p_data = pr_scholarship_per_year[(pr_scholarship_per_year['cod_plan'] == p.cod_plan)
                                      & (pr_scholarship_per_year['expediente'] == p.expediente)
                                      ].sort_values(by=['curso_academico'])
-
-    academic_year = p_data['curso_academico'].unique()[course - 1]
-    p_data = p_data[p_data['curso_academico'] == academic_year]
-    return p_data
+    try:
+        academic_year = p_data['curso_academico'].unique()[course - 1]
+        p_data = p_data[p_data['curso_academico'] == academic_year]
+        return p_data
+    except:
+        return pd.Series()
 
 
 def get_cum_pass_ratio(p: pd.Series, course: int, quadrimester: int):
@@ -175,6 +183,9 @@ class QuadrimestersFeatureEngineering(FeatureEngineering):
         pr_plan_subject_call = self.input_dfs[1]
         pr_scholarship_per_year = self.input_dfs[2]
 
+        cols_before = len(self.input_dfs[0].columns)
+        col_list_before = self.input_dfs[0].columns
+
         analys_record_personal_access[keys.CUM_PASS_RATIO_KEY] = analys_record_personal_access.apply(
             lambda func: get_cum_pass_ratio(func, course=self.course, quadrimester=self.quadrimester), axis=1
         )
@@ -193,6 +204,11 @@ class QuadrimestersFeatureEngineering(FeatureEngineering):
                 lambda func: get_cum_more_1st_call_ratio(func, course=self.course, quadrimester=self.quadrimester),
                 axis=1
             )
+        cols_after = len(self.input_dfs[0].columns)
+        col_list_after = self.input_dfs[0].columns
+        self.changes["add new columns with information of quadrimester"] = cols_after - cols_before
+        log.info("new columns are :" + str(list(set(col_list_after) - set(col_list_before))))
+        log.info("final columns are: " + str(col_list_after))
 
         rows_before = len(analys_record_personal_access.index)
         analys_record_personal_access = analys_record_personal_access[analys_record_personal_access
@@ -219,6 +235,8 @@ def main():
     feat_eng = QuadrimestersFeatureEngineering(
         input_separator="|",
         output_separator="|",
+        save_report_on_load=False,
+        save_report_on_save=False
     )
     feat_eng.execute()
 
