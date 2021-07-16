@@ -1,9 +1,7 @@
 import logging
 from apitep_utils import ETL
-from apitep_utils.transformation import Transformation
 import keys
 from data_model.school_kind import SchoolKind
-from typing import List
 from apitep_utils import ArgumentParserHelper
 import argparse
 
@@ -60,8 +58,8 @@ class ScholarshipPerYearAndPlanSubjCallETL(ETL):
         Process scholarship_per_year data
         """
 
-        log.info("Process scholarship_per_year data of school: " + self.school_kind.value)
-        log.debug("ScolarshipPerYearETL.process()")
+        log.info("Process scholarship_per_year and plan_subject_call data of school: " + self.school_kind.value)
+        log.debug("ScholarshipPerYearAndPlanSubjCallETL.process()")
 
         if self.school_kind is SchoolKind.Polytechnic:
             old_degrees = ['MÁSTER UNIVERSITARIO EN COMPUTACIÓN GRID Y PARALELISMO',
@@ -90,6 +88,10 @@ def main():
         level=logging.DEBUG,
         format="%(asctime)-15s %(levelname)8s %(name)s %(message)s")
     logging.getLogger("matplotlib").setLevel(logging.ERROR)
+
+    log.info("--------------------------------------------------------------------------------------")
+    log.info("Start ScholarshipPerYearAndPlanSubjCallETL")
+    log.debug("main()")
 
     etl = ScholarshipPerYearAndPlanSubjCallETL(
         input_separator="|",
