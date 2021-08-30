@@ -110,6 +110,8 @@ class QuadrimestersFeatureSelection(DataProcessor):
         final_colums = feature_selection.influencing_features
         final_colums.append(keys.RECORD_KEY)
         final_colums.append(keys.PLAN_CODE_KEY)
+        if keys.PLAN_DESCRIPTION_KEY not in final_colums:
+            final_colums.append(keys.PLAN_DESCRIPTION_KEY)
 
         self.output_df = self.input_df[final_colums]
 

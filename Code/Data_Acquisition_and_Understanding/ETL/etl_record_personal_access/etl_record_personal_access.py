@@ -1,8 +1,6 @@
 import logging
 from apitep_utils import ETL
-from apitep_utils.transformation import Transformation
 import keys
-from typing import List
 from Code.data_model.school_kind import SchoolKind
 import pandas as pd
 from apitep_utils import ArgumentParserHelper

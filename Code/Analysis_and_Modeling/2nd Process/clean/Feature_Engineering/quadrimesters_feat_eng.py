@@ -233,8 +233,8 @@ def main():
     log.debug("main()")
 
     feat_eng = QuadrimestersFeatureEngineering(
-        input_separator="|",
-        output_separator="|",
+        input_separator='|',
+        output_separator='|',
         save_report_on_load=False,
         save_report_on_save=False
     )

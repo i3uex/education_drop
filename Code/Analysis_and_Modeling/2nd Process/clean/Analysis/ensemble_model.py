@@ -143,6 +143,10 @@ class QuadrimestersEnsemble(AnalysisModeling):
             self.input_df.drop([keys.CUM_MEDIAN_KEY], axis=1, inplace=True)
 
         self.final_analys_record_personal_access = self.input_df.copy()
+
+        if self.course == 4:
+            self.input_df.drop([keys.PLAN_DESCRIPTION_KEY], axis=1, inplace=True)
+
         self.input_df = pd.get_dummies(data=self.input_df,
                                        columns=self.input_df.drop(self.input_df.select_dtypes(
                                            include=['int64', 'float64']).columns, axis=1).columns)
@@ -152,6 +156,7 @@ class QuadrimestersEnsemble(AnalysisModeling):
         drop_out_data = self.input_df[self.input_df[keys.DROP_OUT_KEY] == 1]
         no_drop_out_data = self.input_df[self.input_df[keys.DROP_OUT_KEY] == 0]
 
+        # FOR PREVIOUS AND FIRST COURSE DATA OF POLYTECHNIC
         if drop_out_data.shape[0] > no_drop_out_data.shape[0]:
             from sklearn.utils import resample
             drop_out_data_downsampled = resample(drop_out_data,
@@ -163,7 +168,7 @@ class QuadrimestersEnsemble(AnalysisModeling):
             y = resample_df[keys.DROP_OUT_KEY]
             self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x, y, test_size=0.25,
                                                                                     random_state=24)
-
+        # FOR OTHER CASES.
         elif self.course > 0:
             from imblearn.combine import SMOTETomek
             x_smt, y_smt = SMOTETomek().fit_sample(self.input_df.drop([keys.DROP_OUT_KEY], axis=1),
@@ -171,6 +176,7 @@ class QuadrimestersEnsemble(AnalysisModeling):
 
             self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x_smt, y_smt, test_size=0.25,
                                                                                     random_state=24)
+        # FOR PREVIOUS AND FIRST COURSE DATA OF TEACHING
         else:
             from sklearn.utils import resample
             no_drop_out_data_downsampled = resample(no_drop_out_data,
@@ -206,8 +212,23 @@ class QuadrimestersEnsemble(AnalysisModeling):
         pred_2 = self.models_developed[1].predict_proba(self.x_test)
         pred_3 = self.models_developed[2].predict_proba(self.x_test_norm)
         weighted_ensemble_pred = pred_1 * 0.7 + pred_2 * 0.15 + pred_3 * 0.15
-        y_pred = (weighted_ensemble_pred[0:, 1] >= self.threshold).astype(int)
 
+        y_pred = self.models_developed[0].predict(self.x_test)
+        log.info("accuracy of GB model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
+        log.info("confusion matrix of GB model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
+        log.info("recall of GB model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
+
+        y_pred = self.models_developed[1].predict(self.x_test)
+        log.info("accuracy of RF model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
+        log.info("confusion matrix of RF model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
+        log.info("recall of RF model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
+
+        y_pred = self.models_developed[2].predict(self.x_test_norm)
+        log.info("accuracy of SVM model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
+        log.info("confusion matrix of SVM model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
+        log.info("recall of SVM model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
+
+        y_pred = (weighted_ensemble_pred[0:, 1] >= self.threshold).astype(int)
         log.info("accuracy of model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
         log.info("confusion matrix of model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
         log.info("recall of model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
@@ -280,6 +301,18 @@ class QuadrimestersEnsemble(AnalysisModeling):
         py.offline.plot(fig[2], filename=str(output_path_plot))
 
         self.final_analys_record_personal_access[self.model_number] = self.y_pred
+
+        self.final_analys_record_personal_access[keys.PLAN_DESCRIPTION_KEY] = self.final_analys_record_personal_access[
+            keys.PLAN_DESCRIPTION_KEY].astype('category')
+        for degree in self.final_analys_record_personal_access[keys.PLAN_DESCRIPTION_KEY].cat.categories:
+            data = self.final_analys_record_personal_access[self.final_analys_record_personal_access[
+                                                                keys.PLAN_DESCRIPTION_KEY] == degree]
+            log.info("accuracy of model of degree " + degree + " is: " + str(sklm.accuracy_score(
+                y_true=data[keys.DROP_OUT_KEY], y_pred=data[self.model_number])))
+            log.info("confusion matrix of model of degree " + degree + " is: \n" + str(sklm.confusion_matrix(
+                y_true=data[keys.DROP_OUT_KEY], y_pred=data[self.model_number])))
+            log.info("recall of model of degree " + degree + " is: " + str(sklm.recall_score(
+                y_true=data[keys.DROP_OUT_KEY], y_pred=data[self.model_number])))
 
         self.final_analys_record_personal_access.to_csv(
             self.output_path_segment,
