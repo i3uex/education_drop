@@ -1,0 +1,130 @@
+schema: '2.0'
+stages:
+  fetch_data_pol_personal_access:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Raw/Politecnica -datos de
+      expediente,personales y de acceso.xls" -o "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv"
+    deps:
+    - path: ../../../Data/Raw/Politecnica -datos de expediente,personales y de acceso.xls
+      md5: bf5e5bfbc15e97cbf9622afaebb2a109
+      size: 1867264
+    outs:
+    - path: ../../../Data/Interim/Polytechnic/polytechnic_record_personal_access.csv
+      md5: 51d3994409479e9a37819cd721447bd9
+      size: 1027023
+  fetch_data_pol_plan_subj_call:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Raw/Politecnica -plan asignatura
+      convocatoria.xls" -o "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv"
+    deps:
+    - path: ../../../Data/Raw/Politecnica -plan asignatura convocatoria.xls
+      md5: 7b74013f840e2cd6c73658ae0a7dfa6a
+      size: 49014272
+    outs:
+    - path: ../../../Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv
+      md5: b99fe3b51dbfac03bc1cd5c8abc52207
+      size: 28021726
+  fetch_data_teach_scholarship_per_year:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Raw/Profesorado -becario
+      por curso academico.xls" -o "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_scholarship_per_year.csv"
+    deps:
+    - path: ../../../Data/Raw/Profesorado -becario por curso academico.xls
+      md5: 887f20e7dd4ac56f26be339adcde571b
+      size: 2037248
+    outs:
+    - path: ../../../Data/Interim/Teaching/teaching_scholarship_per_year.csv
+      md5: 545e8f0436c4413d48746717bda06f38
+      size: 1331370
+  fetch_data_teach_plan_subj_call:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Raw/Profesorado -plan asignatura
+      convocatoria.xls" -o "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_plan_subject_call.csv"
+    deps:
+    - path: ../../../Data/Raw/Profesorado -plan asignatura convocatoria.xls
+      md5: d501f4c3e50546947bdea542c8baffb9
+      size: 54567424
+    outs:
+    - path: ../../../Data/Interim/Teaching/teaching_plan_subject_call.csv
+      md5: ed80b76e3edf0358a9cbe7dbb943c95b
+      size: 36088089
+  fetch_data_teach_personal_access:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Raw/Profesorado -datos de
+      expediente,personales y de acceso.xls" -o "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Teaching/teaching_record_personal_access.csv"
+    deps:
+    - path: ../../../Data/Raw/Profesorado -datos de expediente,personales y de acceso.xls
+      md5: eb4899128eaeff4e111af7d9d6b49bc5
+      size: 2698752
+    outs:
+    - path: ../../../Data/Interim/Teaching/teaching_record_personal_access.csv
+      md5: 6bb2b4dab25000474524fd96ecb677fe
+      size: 1478942
+  fetch_data_pol_scholarship_per_year:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Raw/Politecnica -becario
+      por curso academico.xls" -o "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv"
+    deps:
+    - path: ../../../Data/Raw/Politecnica -becario por curso academico.xls
+      md5: 7195c333a572c535a5a78e6880d8b502
+      size: 1494528
+    outs:
+    - path: ../../../Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv
+      md5: 1c079440cee2bcc23facccdfba25d3bd
+      size: 1078933
+  etl_pol_plan_subj_call:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/ETL/etl_scolarship_per_year_and_plan_subj_call/etl_scolarship_per_year_and_plan_subj_call.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      -s "Polytechnic"
+    deps:
+    - path: ../../../../Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv
+      md5: b99fe3b51dbfac03bc1cd5c8abc52207
+      size: 28021726
+    - path: ../../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
+  python_path:
+    cmd: export PYTHONPATH='/home/fran/Escritorio/i3uex/education_drop/Code'
+  etl_pol_scolarship_per_year:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/ETL/etl_scolarship_per_year_and_plan_subj_call/etl_scolarship_per_year_and_plan_subj_call.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -s "Polytechnic"
+    deps:
+    - path: ../../../../Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv
+      md5: 1c079440cee2bcc23facccdfba25d3bd
+      size: 1078933
+    - path: ../../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../../Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+      md5: 95e81d20e4d6e6114f55ac892e84756c
+      size: 1065167
+  etl_pol_scolarship_per_yea:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/ETL/etl_scolarship_per_year_and_plan_subj_call/etl_scolarship_per_year_and_plan_subj_call.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -s "Polytechnic"
+  etl_pol_record_personal_access:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/ETL/etl_record_personal_access/etl_record_personal_access.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv"
+      -s "Polytechnic"
+    deps:
+    - path: ../../../../Data/Interim/Polytechnic/polytechnic_record_personal_access.csv
+      md5: 51d3994409479e9a37819cd721447bd9
+      size: 1027023
+    - path: ../../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../../Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv
+      md5: 606d8a176e97a4e7db1646960bf7f0e0
+      size: 461665

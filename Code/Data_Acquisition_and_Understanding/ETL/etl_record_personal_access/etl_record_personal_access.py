@@ -1,7 +1,7 @@
 import logging
 from apitep_utils import ETL
 import keys
-from Code.data_model.school_kind import SchoolKind
+from data_model.school_kind import SchoolKind
 import pandas as pd
 from apitep_utils import ArgumentParserHelper
 import argparse

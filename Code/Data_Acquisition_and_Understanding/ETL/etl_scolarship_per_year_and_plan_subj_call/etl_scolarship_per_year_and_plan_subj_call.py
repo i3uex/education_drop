@@ -4,7 +4,9 @@ import keys
 from data_model.school_kind import SchoolKind
 from apitep_utils import ArgumentParserHelper
 import argparse
+import sys
 
+print(sys.path)
 log = logging.getLogger(__name__)
 
 
