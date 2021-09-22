@@ -128,3 +128,515 @@ stages:
     - path: ../../../../Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv
       md5: 606d8a176e97a4e7db1646960bf7f0e0
       size: 461665
+  feat_eng_pol_personal_access:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/personal_access_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/personal_access_data/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic"
+    deps:
+    - path: ../../../Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv
+      md5: 606d8a176e97a4e7db1646960bf7f0e0
+      size: 461665
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/personal_access_data/analys_polytechnic_record_personal_access.csv
+      md5: bf5e71a42ca84ba109aece7b3d50fd9c
+      size: 203635
+  feat_eng_pol_personal_acces:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/personal_access_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/personal_access_data/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic"
+    deps:
+    - path: ../../../Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv
+      md5: 606d8a176e97a4e7db1646960bf7f0e0
+      size: 461665
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/personal_access_data/analys_polytechnic_record_personal_access.csv
+      md5: bf5e71a42ca84ba109aece7b3d50fd9c
+      size: 203635
+  feat_sel_pol_personal_access:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Selection/feat_sel.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/personal_access_data/analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/personal_access_data/final_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 0 -q 0
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/personal_access_data/analys_polytechnic_record_personal_access.csv
+      md5: bf5e71a42ca84ba109aece7b3d50fd9c
+      size: 203635
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/personal_access_data/final_analys_polytechnic_record_personal_access.csv
+      md5: 9a7c83000ba2af3de287f2659c75220e
+      size: 191610
+  analysis_pol_personal_access:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Analysis/ensemble_model.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/personal_access_data/final_analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/personal_access_data/pred_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 0 -q 0 -mn 0
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/personal_access_data/final_analys_polytechnic_record_personal_access.csv
+      md5: 9a7c83000ba2af3de287f2659c75220e
+      size: 191610
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/personal_access_data/pred_analys_polytechnic_record_personal_access.csv
+      md5: ea63fee6616c0267fd81d4f64dbe91df
+      size: 194448
+  feat_eng_pol_1st_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/personal_access_data/pred_analys_polytechnic_record_personal_access.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/1st_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 1 -q 1
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/personal_access_data/pred_analys_polytechnic_record_personal_access.csv
+      md5: ea63fee6616c0267fd81d4f64dbe91df
+      size: 194448
+    - path: ../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
+    - path: ../../../Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+      md5: 95e81d20e4d6e6114f55ac892e84756c
+      size: 1065167
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/1st_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 3ca8bad7bc3477f5be3f1711d94b648c
+      size: 231049
+  feat_sel_pol_1st_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Selection/feat_sel.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/1st_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/1st_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 1 -q 1
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/1st_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 3ca8bad7bc3477f5be3f1711d94b648c
+      size: 231049
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/1st_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 2578a6f263fa72f7faadf84c111928ab
+      size: 224507
+  analys_pol_1st_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Analysis/ensemble_model.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/1st_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/1st_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 1 -q 1 -mn 1
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/1st_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 2578a6f263fa72f7faadf84c111928ab
+      size: 224507
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/1st_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: a2ea5eb1f57efd40cd39098156b7b63b
+      size: 227343
+  feat_eng_pol_2nd_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/1st_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/2nd_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 1 -q 2
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/1st_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: a2ea5eb1f57efd40cd39098156b7b63b
+      size: 227343
+    - path: ../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
+    - path: ../../../Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+      md5: 95e81d20e4d6e6114f55ac892e84756c
+      size: 1065167
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/2nd_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: d5486ec9f257af393d53e76732c6c024
+      size: 242360
+  feat_sel_pol_2nd_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Selection/feat_sel.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/2nd_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/2nd_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 1 -q 2
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/2nd_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: d5486ec9f257af393d53e76732c6c024
+      size: 242360
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/2nd_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: ca656c0851182ff353b50b8c18b6d864
+      size: 234989
+  analys_pol_2nd_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Analysis/ensemble_model.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/2nd_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/2nd_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 1 -q 2 -mn 2
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/2nd_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: ca656c0851182ff353b50b8c18b6d864
+      size: 234989
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/2nd_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 1db0206b31ac9fa3fec58e6012899db7
+      size: 237823
+  feat_eng_pol_3rd_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/2nd_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/3rd_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 2 -q 1
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/2nd_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 1db0206b31ac9fa3fec58e6012899db7
+      size: 237823
+    - path: ../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
+    - path: ../../../Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+      md5: 95e81d20e4d6e6114f55ac892e84756c
+      size: 1065167
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/3rd_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 7b8a683a48beb38875c73e06c34bea64
+      size: 194039
+  feat_sel_pol_3rd_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Selection/feat_sel.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/3rd_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/3rd_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 2 -q 1
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/3rd_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 7b8a683a48beb38875c73e06c34bea64
+      size: 194039
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/3rd_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: f9a9f8a5c802384175760782acd829d5
+      size: 177285
+  analys_pol_3rd_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Analysis/ensemble_model.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/3rd_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/3rd_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 2 -q 1 -mn 3
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/3rd_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: f9a9f8a5c802384175760782acd829d5
+      size: 177285
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/3rd_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 9eea6bbdf57298effbd216e2b7d980b7
+      size: 185792
+  feat_eng_pol_4th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/3rd_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/4th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 2 -q 2
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/3rd_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 9eea6bbdf57298effbd216e2b7d980b7
+      size: 185792
+    - path: ../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
+    - path: ../../../Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+      md5: 95e81d20e4d6e6114f55ac892e84756c
+      size: 1065167
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/4th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 6fd60d0ded934aba8a038ddc64930c99
+      size: 210125
+  feat_sel_pol_4th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Selection/feat_sel.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/4th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/4th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 2 -q 2
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/4th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 6fd60d0ded934aba8a038ddc64930c99
+      size: 210125
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/4th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 23d504e94a984ad29b1be10a8f5edd96
+      size: 192222
+  analys_pol_4th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Analysis/ensemble_model.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/4th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/4th_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 2 -q 2 -mn 4
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/4th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 23d504e94a984ad29b1be10a8f5edd96
+      size: 192222
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/4th_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 3d8025e14735727f0094e58c7907fd5a
+      size: 189688
+  feat_eng_pol_5th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/4th_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/5th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 3 -q 1
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/4th_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 3d8025e14735727f0094e58c7907fd5a
+      size: 189688
+    - path: ../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
+    - path: ../../../Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+      md5: 95e81d20e4d6e6114f55ac892e84756c
+      size: 1065167
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/5th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 66742581675835e2df5baa484675b78d
+      size: 178197
+  feat_sel_pol_5th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Selection/feat_sel.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/5th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/5th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 3 -q 1
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/5th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 66742581675835e2df5baa484675b78d
+      size: 178197
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/5th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: b56fd1de70fe8c8b55f2fb326ae10b6f
+      size: 165222
+  analys_pol_5th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Analysis/ensemble_model.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/5th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/5th_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 3 -q 1 -mn 5
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/5th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: b56fd1de70fe8c8b55f2fb326ae10b6f
+      size: 165222
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/5th_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: c695bb454787602c81c6590fc4961ab1
+      size: 163065
+  feat_eng_pol_6th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/5th_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/6th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 3 -q 2
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/5th_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: c695bb454787602c81c6590fc4961ab1
+      size: 163065
+    - path: ../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
+    - path: ../../../Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+      md5: 95e81d20e4d6e6114f55ac892e84756c
+      size: 1065167
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/6th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 6b289c42cad184883f287d4c0f22fa4a
+      size: 167183
+  feat_sel_pol_6th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Selection/feat_sel.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/6th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/6th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 3 -q 2
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/6th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 6b289c42cad184883f287d4c0f22fa4a
+      size: 167183
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/6th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 383adbdac8f5cb5eb6ea5ab93591f34d
+      size: 165837
+  analys_pol_6th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Analysis/ensemble_model.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/6th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/6th_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 3 -q 2 -mn 6
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/6th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 383adbdac8f5cb5eb6ea5ab93591f34d
+      size: 165837
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/6th_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 618da424140158446df3997f0c418d80
+      size: 163718
+  feat_eng_pol_7th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/6th_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/7th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 4 -q 1
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/6th_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 618da424140158446df3997f0c418d80
+      size: 163718
+    - path: ../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
+    - path: ../../../Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+      md5: 95e81d20e4d6e6114f55ac892e84756c
+      size: 1065167
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/7th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 9e71424d6fbaa1c8e68e32276ab9b330
+      size: 148063
+  feat_sel_pol_7th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Selection/feat_sel.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/7th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/7th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 4 -q 1
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/7th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 9e71424d6fbaa1c8e68e32276ab9b330
+      size: 148063
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/7th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 93e026b61773f991315425fadd5044ee
+      size: 146866
+  analys_pol_7th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Analysis/ensemble_model.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/7th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/7th_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 4 -q 1 -mn 7
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/7th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 93e026b61773f991315425fadd5044ee
+      size: 146866
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/7th_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 99a79c4eaf59649291d3fa40fdbaeee7
+      size: 145077
+  feat_eng_pol_8th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/7th_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
+      "/home/fran/Escritorio/i3uex/education_drop/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/8th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 4 -q 2
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/7th_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 99a79c4eaf59649291d3fa40fdbaeee7
+      size: 145077
+    - path: ../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
+    - path: ../../../Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv
+      md5: 95e81d20e4d6e6114f55ac892e84756c
+      size: 1065167
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/8th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 0afe38da3a3660a362333e6f904a9031
+      size: 147184
+  feat_sel_pol_8th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Selection/feat_sel.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/8th_quadrimester/analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/8th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 4 -q 2
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/8th_quadrimester/analys_polytechnic_record_personal_access.csv
+      md5: 0afe38da3a3660a362333e6f904a9031
+      size: 147184
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/8th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 0df9fbcf69fab4cd67d1200ceb9a8b60
+      size: 146053
+  analys_pol_8th_quad:
+    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Analysis/ensemble_model.py
+      -i "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/8th_quadrimester/final_analys_polytechnic_record_personal_access.csv"
+      -o "/home/fran/Escritorio/i3uex/education_drop/Data/For_Analysis_and_Modeling/8th_quadrimester/pred_analys_polytechnic_record_personal_access.csv"
+      -s "Polytechnic" -c 4 -q 2 -mn 8
+    deps:
+    - path: ../../../Data/For_Analysis_and_Modeling/8th_quadrimester/final_analys_polytechnic_record_personal_access.csv
+      md5: 0df9fbcf69fab4cd67d1200ceb9a8b60
+      size: 146053
+    - path: ../../keys.py
+      md5: 7aa472c0fc9233846361be28cffc409a
+      size: 1158
+    outs:
+    - path: ../../../Data/For_Analysis_and_Modeling/8th_quadrimester/pred_analys_polytechnic_record_personal_access.csv
+      md5: 266adc24e8fa2c064f459be50fb2b79d
+      size: 144099
