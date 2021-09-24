@@ -1,7 +1,7 @@
 wdir:
   fetch_data: "/home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/"
   etl:
-    scolarship_per_year_&_plan_subj_call: "/home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/ETL/etl_scolarship_per_year_&_plan_subj_call/"
+    scolarship_per_year_&_plan_subj_call: "/home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/ETL/etl_scolarship_per_year_and_plan_subj_call/"
     record_personal_access: "/home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/ETL/etl_record_personal_access/"
   feat_eng:
     personal_access_script: "/home/fran/Escritorio/i3uex/education_drop/Code/Analysis_and_Modeling/Feature_Engineering/"

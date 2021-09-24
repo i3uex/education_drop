@@ -29,36 +29,6 @@ stages:
     outs:
       - ${data.interim_data.pol.personal_access}
     wdir: ${wdir.fetch_data}
-  fetch_data_teach_plan_subj_call:
-    cmd: >-
-      python ${scripts.fetch_data}
-      -i "${data.raw_data.teach.plan_subj_call}"
-      -o "${data.interim_data.teach.plan_subj_call}"
-    deps:
-      - ${data.raw_data.teach.plan_subj_call}
-    outs:
-      - ${data.interim_data.teach.plan_subj_call}
-    wdir: ${wdir.fetch_data}
-  fetch_data_teach_scholarship_per_year:
-    cmd: >-
-      python ${scripts.fetch_data}
-      -i "${data.raw_data.teach.scholarship}"
-      -o "${data.interim_data.teach.scholarship}"
-    deps:
-      - ${data.raw_data.teach.scholarship}
-    outs:
-      - ${data.interim_data.teach.scholarship}
-    wdir: ${wdir.fetch_data}
-  fetch_data_teach_personal_access:
-    cmd: >-
-      python ${scripts.fetch_data}
-      -i "${data.raw_data.teach.personal_access}"
-      -o "${data.interim_data.teach.personal_access}"
-    deps:
-      - ${data.raw_data.teach.personal_access}
-    outs:
-      - ${data.interim_data.teach.personal_access}
-    wdir: ${wdir.fetch_data}
   etl_pol_plan_subj_call:
     cmd: >-
       python ${scripts.etl.scolarship_per_year_&_plan_subj_call}
@@ -91,6 +61,7 @@ stages:
       -s "${school_kind.pol}"
     deps:
       - ${data.interim_data.pol.personal_access}
+      - ${data.processed_data.pol.plan_subj_call}
       - /home/fran/Escritorio/i3uex/education_drop/Code/keys.py
     outs:
       - ${data.processed_data.pol.personal_access}
