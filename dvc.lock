@@ -121,6 +121,9 @@ stages:
     - path: ../../../../Data/Interim/Polytechnic/polytechnic_record_personal_access.csv
       md5: 51d3994409479e9a37819cd721447bd9
       size: 1027023
+    - path: ../../../../Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv
+      md5: 6e9713ae442ba01761d37b98956007fa
+      size: 27832849
     - path: ../../../keys.py
       md5: 7aa472c0fc9233846361be28cffc409a
       size: 1158
