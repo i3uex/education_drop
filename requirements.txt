@@ -4,3 +4,6 @@ numpy==1.21.2
 scikit-learn==1.0
 plotly==5.3.1
 dvc==2.7.4
+pydrive2[fsspec]>=1.9.4
+swifter==1.0.7
+git+https://github.com/i3uex/apitep_utils.git@feature/classes
