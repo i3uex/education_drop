@@ -40,7 +40,7 @@ stages:
       -s "${school_kind.pol}"
     deps:
       - ${dvc_root}${data.interim_data.pol.plan_subj_call}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
     wdir: ${dvc_root}${wdir.etl.scolarship_per_year_&_plan_subj_call}
@@ -52,7 +52,7 @@ stages:
       -s "${school_kind.pol}"
     deps:
       - ${dvc_root}${data.interim_data.pol.scholarship}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.processed_data.pol.scholarship}
     wdir: ${dvc_root}${wdir.etl.scolarship_per_year_&_plan_subj_call}
@@ -65,7 +65,7 @@ stages:
     deps:
       - ${dvc_root}${data.interim_data.pol.personal_access}
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.processed_data.pol.personal_access}
     wdir: ${dvc_root}${wdir.etl.record_personal_access}
@@ -77,7 +77,7 @@ stages:
       -s "${school_kind.pol}"
     deps:
       - ${dvc_root}${data.processed_data.pol.personal_access}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.analys_data.personal_access_data.pol}
     wdir: ${dvc_root}${wdir.feat_eng.personal_access_script}
@@ -91,7 +91,7 @@ stages:
       -q 0
     deps:
       - ${dvc_root}${data.analys_data.personal_access_data.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.final_analys_data.personal_access_data.pol}
     wdir: ${dvc_root}${wdir.feat_sel}
@@ -106,7 +106,7 @@ stages:
       -mn 0
     deps:
       - ${dvc_root}${data.final_analys_data.personal_access_data.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.pred_analys_data.personal_access_data.pol}
     wdir: ${dvc_root}${wdir.analys}
@@ -122,7 +122,7 @@ stages:
       - ${dvc_root}${data.pred_analys_data.personal_access_data.pol}
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
       - ${dvc_root}${data.processed_data.pol.scholarship}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.analys_data.1st_quad.pol}
     wdir: ${dvc_root}${wdir.feat_eng.quadrimesters_script}
@@ -136,7 +136,7 @@ stages:
       -q 1
     deps:
       - ${dvc_root}${data.analys_data.1st_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.final_analys_data.1st_quad.pol}
     wdir: ${dvc_root}${wdir.feat_sel}
@@ -151,7 +151,7 @@ stages:
       -mn 1
     deps:
       - ${dvc_root}${data.final_analys_data.1st_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.pred_analys_data.1st_quad.pol}
     wdir: ${dvc_root}${wdir.analys}
@@ -167,7 +167,7 @@ stages:
       - ${dvc_root}${data.pred_analys_data.1st_quad.pol}
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
       - ${dvc_root}${data.processed_data.pol.scholarship}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.analys_data.2nd_quad.pol}
     wdir: ${dvc_root}${wdir.feat_eng.quadrimesters_script}
@@ -181,7 +181,7 @@ stages:
       -q 2
     deps:
       - ${dvc_root}${data.analys_data.2nd_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.final_analys_data.2nd_quad.pol}
     wdir: ${dvc_root}${wdir.feat_sel}
@@ -196,7 +196,7 @@ stages:
       -mn 2
     deps:
       - ${dvc_root}${data.final_analys_data.2nd_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.pred_analys_data.2nd_quad.pol}
     wdir: ${dvc_root}${wdir.analys}
@@ -212,7 +212,7 @@ stages:
       - ${dvc_root}${data.pred_analys_data.2nd_quad.pol}
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
       - ${dvc_root}${data.processed_data.pol.scholarship}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.analys_data.3rd_quad.pol}
     wdir: ${dvc_root}${wdir.feat_eng.quadrimesters_script}
@@ -226,7 +226,7 @@ stages:
       -q 1
     deps:
       - ${dvc_root}${data.analys_data.3rd_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.final_analys_data.3rd_quad.pol}
     wdir: ${dvc_root}${wdir.feat_sel}
@@ -241,7 +241,7 @@ stages:
       -mn 3
     deps:
       - ${dvc_root}${data.final_analys_data.3rd_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.pred_analys_data.3rd_quad.pol}
     wdir: ${dvc_root}${wdir.analys}
@@ -257,7 +257,7 @@ stages:
       - ${dvc_root}${data.pred_analys_data.3rd_quad.pol}
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
       - ${dvc_root}${data.processed_data.pol.scholarship}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.analys_data.4th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_eng.quadrimesters_script}
@@ -271,7 +271,7 @@ stages:
       -q 2
     deps:
       - ${dvc_root}${data.analys_data.4th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.final_analys_data.4th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_sel}
@@ -286,7 +286,7 @@ stages:
       -mn 4
     deps:
       - ${dvc_root}${data.final_analys_data.4th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.pred_analys_data.4th_quad.pol}
     wdir: ${dvc_root}${wdir.analys}
@@ -302,7 +302,7 @@ stages:
       - ${dvc_root}${data.pred_analys_data.4th_quad.pol}
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
       - ${dvc_root}${data.processed_data.pol.scholarship}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.analys_data.5th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_eng.quadrimesters_script}
@@ -316,7 +316,7 @@ stages:
       -q 1
     deps:
       - ${dvc_root}${data.analys_data.5th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.final_analys_data.5th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_sel}
@@ -331,7 +331,7 @@ stages:
       -mn 5
     deps:
       - ${dvc_root}${data.final_analys_data.5th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.pred_analys_data.5th_quad.pol}
     wdir: ${dvc_root}${wdir.analys}
@@ -347,7 +347,7 @@ stages:
       - ${dvc_root}${data.pred_analys_data.5th_quad.pol}
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
       - ${dvc_root}${data.processed_data.pol.scholarship}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.analys_data.6th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_eng.quadrimesters_script}
@@ -361,7 +361,7 @@ stages:
       -q 2
     deps:
       - ${dvc_root}${data.analys_data.6th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.final_analys_data.6th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_sel}
@@ -376,7 +376,7 @@ stages:
       -mn 6
     deps:
       - ${dvc_root}${data.final_analys_data.6th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.pred_analys_data.6th_quad.pol}
     wdir: ${dvc_root}${wdir.analys}
@@ -392,7 +392,7 @@ stages:
       - ${dvc_root}${data.pred_analys_data.6th_quad.pol}
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
       - ${dvc_root}${data.processed_data.pol.scholarship}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.analys_data.7th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_eng.quadrimesters_script}
@@ -406,7 +406,7 @@ stages:
       -q 1
     deps:
       - ${dvc_root}${data.analys_data.7th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.final_analys_data.7th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_sel}
@@ -421,7 +421,7 @@ stages:
       -mn 7
     deps:
       - ${dvc_root}${data.final_analys_data.7th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.pred_analys_data.7th_quad.pol}
     wdir: ${dvc_root}${wdir.analys}
@@ -437,7 +437,7 @@ stages:
       - ${dvc_root}${data.pred_analys_data.7th_quad.pol}
       - ${dvc_root}${data.processed_data.pol.plan_subj_call}
       - ${dvc_root}${data.processed_data.pol.scholarship}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.analys_data.8th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_eng.quadrimesters_script}
@@ -451,7 +451,7 @@ stages:
       -q 2
     deps:
       - ${dvc_root}${data.analys_data.8th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.final_analys_data.8th_quad.pol}
     wdir: ${dvc_root}${wdir.feat_sel}
@@ -466,7 +466,7 @@ stages:
       -mn 8
     deps:
       - ${dvc_root}${data.final_analys_data.8th_quad.pol}
-      - ${dvc_root}/education_drop/Code/keys.py
+      - ${dvc_root}/Code/keys.py
     outs:
       - ${dvc_root}${data.pred_analys_data.8th_quad.pol}
     wdir: ${dvc_root}${wdir.analys}

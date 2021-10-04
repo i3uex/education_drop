@@ -9,6 +9,8 @@ def main():
     arguments = argument_parser.parse_args()
 
     root_directory = arguments.root_directory
+    if root_directory == '/':
+        root_directory = ''
     json_file = open("params.json", "r")
     json_object = json.load(json_file)
     json_file.close()

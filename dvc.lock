@@ -1,7 +1,7 @@
 schema: '2.0'
 stages:
   fetch_data_pol_personal_access:
-    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
+    cmd: python3 /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
       -i "/home/fran/Escritorio/i3uex/education_drop/Data/Raw/Politecnica -datos de
       expediente,personales y de acceso.xls" -o "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_record_personal_access.csv"
     deps:
@@ -13,7 +13,7 @@ stages:
       md5: 51d3994409479e9a37819cd721447bd9
       size: 1027023
   fetch_data_pol_plan_subj_call:
-    cmd: python /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
+    cmd: python3 /home/fran/Escritorio/i3uex/education_drop/Code/Data_Acquisition_and_Understanding/Fetch_Data/fetch_data.py
       -i "/home/fran/Escritorio/i3uex/education_drop/Data/Raw/Politecnica -plan asignatura
       convocatoria.xls" -o "/home/fran/Escritorio/i3uex/education_drop/Data/Interim/Polytechnic/polytechnic_plan_subject_call.csv"
     deps:

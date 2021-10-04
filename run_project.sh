@@ -1,4 +1,3 @@
-sudo apt install git
 pip install -r requirements.txt
 dvc remote modify storage --local gdrive_service_account_json_file_path "$(pwd)"/education-drop-d884963a3b3b.json
 dvc fetch
