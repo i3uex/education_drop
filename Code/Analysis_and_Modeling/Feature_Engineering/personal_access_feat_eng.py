@@ -86,17 +86,10 @@ class RecordPersonalAccessFeatureEngineering(FeatureEngineering):
         anio_nacimiento_bcket_array = np.linspace(1960, 2005, 10)
         self.input_dfs[0][keys.BIRTH_YEAR_INTERVAL_KEY] = pd.cut(
             self.input_dfs[0][keys.BIRTH_YEAR_KEY], anio_nacimiento_bcket_array, include_lowest=True)
-        # COMMENT LINE BELOW WHEN RUN FEATURE ENGINEERING FOR DATA VISUALIZATION.
-        # self.input_dfs[0].drop([keys.BIRTH_YEAR_KEY], axis=1, inplace=True)
-        # log.info("Get only birth year of birth date")
 
         self.input_dfs[0][keys.DROP_OUT_KEY] = self.input_dfs[0][keys.DROP_OUT_KEY].apply(
             lambda func: 1 if func == 'S' else 0)
         log.info("Change format to " + keys.DROP_OUT_KEY + " feature")
-
-        # rows_before = len(self.input_dfs[0].index) self.input_dfs[0] = self.input_dfs[0][self.input_dfs[0][
-        # keys.PLAN_CODE_KEY] != 1627] rows_after = len(self.input_dfs[0].index) self.changes['delete people of
-        # INGENIERÍA INFORMÁTICA EN INGENIERÍA DE COMPUTADORES'] = rows_before - rows_after
 
         self.output_df = self.input_dfs[0]
 
