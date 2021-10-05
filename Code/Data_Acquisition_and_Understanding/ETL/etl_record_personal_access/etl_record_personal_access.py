@@ -132,8 +132,8 @@ def main():
     etl = RecordPersonalAccessETL(
         input_separator="|",
         output_separator="|",
-        save_report_on_save=True,
-        save_report_on_load=True,
+        save_report_on_save=False,
+        save_report_on_load=False,
         report_type=ETL.ReportType.Both,
     )
     etl.execute()
