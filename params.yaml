@@ -8,7 +8,7 @@ scripts:
   fetch_data: "/Code/Data_Visualization/Data_Acquisition/dv_data_acquisition.py"
   feat_eng:
     personal_access_script: "/Code/Data_Visualization/Analysis_and_Modeling/Feature_Engineering/dv_personal_access_feat_eng.py"
-    quadrimesters_script: "/Code/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py"
+    quadrimesters_script: "/Code/Data_Visualization/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py"
   analys_before_pred: "/Code/Data_Visualization/Analysis_and_Modeling/Prediction/ensemble_model_before_predict.py"
   analys: "/Code/Data_Visualization/Analysis_and_Modeling/Prediction/dv_prediction.py"
 school_kind:
@@ -33,12 +33,16 @@ data:
         personal_access: "/Data/Raw/Politecnica -datos de expediente,personales y de acceso.xls"
     processed_data:
        pol:
-         plan_subj_call: "/Data/Data_Visualization/record_personal_access/dv_pr_pol_record_personal_access.csv"
+         plan_subj_call: "/Data/Processed/Polytechnic/Plan_Subject_Call/pr_polytechnic_plan_subject_call.csv"
          scholarship: "/Data/Processed/Polytechnic/Scolarship_per_year/pr_polytechnic_scholarship_per_year.csv"
          personal_access: "/Data/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv"
+    train_ids:
+      personal_access_data: "/Data/Data_Visualization/record_personal_access/train_ids/Polytechnic_train_ids.csv"
     dv_analys_data:
      personal_access_data:
        pol: "/Data/Data_Visualization/record_personal_access/dv_analys_pol_record_personal_access.csv"
+     1st_quad:
+       pol: "/Data/Data_Visualization/1st_quad/dv_analys_pol.csv"
     final_analys_data:
      personal_access_data:
        pol: "/Data/For_Analysis_and_Modeling/personal_access_data/final_analys_polytechnic_record_personal_access.csv"
