@@ -90,7 +90,7 @@ class RecordPersonalAccessFeatureEngineering(FeatureEngineering):
         self.input_dfs[0][keys.DROP_OUT_KEY] = self.input_dfs[0][keys.DROP_OUT_KEY].apply(
             lambda func: 1 if func == 'S' else 0)
         log.info("Change format to " + keys.DROP_OUT_KEY + " feature")
-
+        self.input_dfs[0].dropna(inplace=True)
         self.output_df = self.input_dfs[0]
 
 

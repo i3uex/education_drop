@@ -89,6 +89,7 @@ def main():
         output_separator="|",
         save_report_on_save=False,
         save_report_on_load=False,
+        input_type_excel=True
     )
     etl.execute()
 
