@@ -103,7 +103,7 @@ stages:
       -s "${school_kind.pol}"
       -c 0
       -q 0
-      -mn 0
+      -mn "1st_model"
     deps:
       - ${dvc_root}${data.final_analys_data.personal_access_data.pol}
       - ${dvc_root}/Code/keys.py
@@ -148,7 +148,7 @@ stages:
       -s "${school_kind.pol}"
       -c 1
       -q 1
-      -mn 1
+      -mn "1st_model"
     deps:
       - ${dvc_root}${data.final_analys_data.1st_quad.pol}
       - ${dvc_root}/Code/keys.py
@@ -193,7 +193,7 @@ stages:
       -s "${school_kind.pol}"
       -c 1
       -q 2
-      -mn 2
+      -mn "2nd_model"
     deps:
       - ${dvc_root}${data.final_analys_data.2nd_quad.pol}
       - ${dvc_root}/Code/keys.py
@@ -238,7 +238,7 @@ stages:
       -s "${school_kind.pol}"
       -c 2
       -q 1
-      -mn 3
+      -mn "3rd_model"
     deps:
       - ${dvc_root}${data.final_analys_data.3rd_quad.pol}
       - ${dvc_root}/Code/keys.py
@@ -283,7 +283,7 @@ stages:
       -s "${school_kind.pol}"
       -c 2
       -q 2
-      -mn 4
+      -mn "4th_model"
     deps:
       - ${dvc_root}${data.final_analys_data.4th_quad.pol}
       - ${dvc_root}/Code/keys.py
@@ -328,7 +328,7 @@ stages:
       -s "${school_kind.pol}"
       -c 3
       -q 1
-      -mn 5
+      -mn "5th_model"
     deps:
       - ${dvc_root}${data.final_analys_data.5th_quad.pol}
       - ${dvc_root}/Code/keys.py
@@ -373,7 +373,7 @@ stages:
       -s "${school_kind.pol}"
       -c 3
       -q 2
-      -mn 6
+      -mn "6th_model"
     deps:
       - ${dvc_root}${data.final_analys_data.6th_quad.pol}
       - ${dvc_root}/Code/keys.py
@@ -418,7 +418,7 @@ stages:
       -s "${school_kind.pol}"
       -c 4
       -q 1
-      -mn 7
+      -mn "7th_model"
     deps:
       - ${dvc_root}${data.final_analys_data.7th_quad.pol}
       - ${dvc_root}/Code/keys.py
@@ -463,7 +463,7 @@ stages:
       -s "${school_kind.pol}"
       -c 4
       -q 2
-      -mn 8
+      -mn "8th_model"
     deps:
       - ${dvc_root}${data.final_analys_data.8th_quad.pol}
       - ${dvc_root}/Code/keys.py
