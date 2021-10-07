@@ -86,13 +86,11 @@ class RecordPersonalAccessFeatureEngineering(FeatureEngineering):
         anio_nacimiento_bcket_array = np.linspace(1960, 2005, 10)
         self.input_dfs[0][keys.BIRTH_YEAR_INTERVAL_KEY] = pd.cut(
             self.input_dfs[0][keys.BIRTH_YEAR_KEY], anio_nacimiento_bcket_array, include_lowest=True)
-        self.input_dfs[0].drop([keys.BIRTH_YEAR_KEY], axis=1, inplace=True)
-        log.info("Get only birth year of birth date")
 
         self.input_dfs[0][keys.DROP_OUT_KEY] = self.input_dfs[0][keys.DROP_OUT_KEY].apply(
             lambda func: 1 if func == 'S' else 0)
         log.info("Change format to " + keys.DROP_OUT_KEY + " feature")
-
+        self.input_dfs[0].dropna(inplace=True)
         self.output_df = self.input_dfs[0]
 
 

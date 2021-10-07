@@ -1,16 +1,14 @@
+import argparse
+from apitep_utils import ETL, ArgumentParserHelper
 import logging
-from apitep_utils import ETL
+
 import keys
 from data_model.school_kind import SchoolKind
-from apitep_utils import ArgumentParserHelper
-import argparse
-import sys
 
-print(sys.path)
 log = logging.getLogger(__name__)
 
 
-class ScholarshipPerYearAndPlanSubjCallETL(ETL):
+class DataAcquisitionDV(ETL):
     school_kind: SchoolKind = None
 
     def parse_arguments(self):
@@ -57,30 +55,21 @@ class ScholarshipPerYearAndPlanSubjCallETL(ETL):
     @ETL.stopwatch
     def process(self):
         """
-        Process scholarship_per_year data
+        Process record personal data
         """
+        log.info("Data acquisition of record_personal_access data for data visualization of school: " +
+                 self.school_kind.value)
+        log.debug("DataAcquisitionDV.process()")
 
-        log.info("Process scholarship_per_year and plan_subject_call data of school: " + self.school_kind.value)
-        log.debug("ScholarshipPerYearAndPlanSubjCallETL.process()")
-
-        if self.school_kind is SchoolKind.Polytechnic:
-            old_degrees = ['MÁSTER UNIVERSITARIO EN COMPUTACIÓN GRID Y PARALELISMO',
-                           'MÁSTER DE ESPECIALIZACIÓN EN GEOTECNOLOGÍAS TOPOGRÁFICAS EN LA INGENIERÍA',
-                           'MÁSTER UNIVERSITARIO EN EVALUACIÓN Y GESTIÓN DEL RUIDO AMBIENTAL',
-                           'MÁSTER EN COMPUTACIÓN GRID Y PARALELISMO']
-        elif self.school_kind is SchoolKind.Teaching:
-            old_degrees = ['MÁSTER UNIVERSITARIO EN INVESTIGACIÓN EN CIENCIAS SOCIALES Y JURÍDICAS',
-                           'MÁSTER UNIV. FORMACIÓN EN PORTUGUÉS PARA PROF. ENSEÑANZA PRIM. Y SECUNDARIA']
-        else:
-            raise NotImplementedError
+        target_courses = ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21']
 
         rows_before = len(self.input_dfs[0].index)
-        self.input_dfs[0] = self.input_dfs[0][self.input_dfs[0][keys.PLAN_DESCRIPTION_KEY].isin(old_degrees) == False]
+        self.input_dfs[0] = self.input_dfs[0][self.input_dfs[0][keys.OPEN_YEAR_PLAN_KEY].isin(target_courses)]
         rows_after = len(self.input_dfs[0].index)
-        self.changes["delete data of old degrees"] = rows_before - rows_after
+        self.changes["get only target courses for visualization"] = rows_before - rows_after
 
-        log.info("columns of final dataset are:" + self.input_dfs[0].columns)
-
+        log.info("columns of final dataset are:" + str(self.input_dfs[0].columns))
+        log.info("final number of rows: " + str(len(self.input_dfs[0].index)))
         self.output_df = self.input_dfs[0]
 
 
@@ -92,15 +81,15 @@ def main():
     logging.getLogger("matplotlib").setLevel(logging.ERROR)
 
     log.info("--------------------------------------------------------------------------------------")
-    log.info("Start ScholarshipPerYearAndPlanSubjCallETL")
+    log.info("Start DataAcquisitionDV")
     log.debug("main()")
 
-    etl = ScholarshipPerYearAndPlanSubjCallETL(
+    etl = DataAcquisitionDV(
         input_separator="|",
         output_separator="|",
-        save_report_on_load=False,
         save_report_on_save=False,
-        report_type=ETL.ReportType.Both,
+        save_report_on_load=False,
+        input_type_excel=True
     )
     etl.execute()
 
