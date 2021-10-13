@@ -4,6 +4,14 @@ wdir:
   analys: "/Code/Data_Visualization/Analysis_and_Modeling/Prediction"
 dir:
   dv_personal_access: "/Data/Data_Visualization/record_personal_access/"
+  1st_quad: "/Data/Data_Visualization/1st_quadrimester"
+  2nd_quad: "/Data/Data_Visualization/2nd_quadrimester"
+  3rd_quad: "/Data/Data_Visualization/3rd_quadrimester"
+  4th_quad: "/Data/Data_Visualization/4th_quadrimester"
+  5th_quad: "/Data/Data_Visualization/5th_quadrimester"
+  6th_quad: "/Data/Data_Visualization/6th_quadrimester"
+  7th_quad: "/Data/Data_Visualization/7th_quadrimester"
+  8th_quad: "/Data/Data_Visualization/8th_quadrimester"
 scripts:
   fetch_data: "/Code/Data_Visualization/Data_Acquisition/dv_data_acquisition.py"
   feat_eng:
@@ -18,6 +26,38 @@ models_developed:
     gb: "/Data/Data_Visualization/record_personal_access/models/Polytechnic_gradientBoosting_model.sav"
     rf: "/Data/Data_Visualization/record_personal_access/models/Polytechnic_randomForest_model.sav"
     svm: "/Data/Data_Visualization/record_personal_access/models/Polytechnic_SVM_model.sav"
+  1st_quad:
+    gb: "/Data/Data_Visualization/1st_quadrimester/models/Polytechnic_gradientBoosting_model.sav"
+    rf: "/Data/Data_Visualization/1st_quadrimester/models/Polytechnic_randomForest_model.sav"
+    svm: "/Data/Data_Visualization/1st_quadrimester/models/Polytechnic_SVM_model.sav"
+  2nd_quad:
+    gb: "/Data/Data_Visualization/2nd_quadrimester/models/Polytechnic_gradientBoosting_model.sav"
+    rf: "/Data/Data_Visualization/2nd_quadrimester/models/Polytechnic_randomForest_model.sav"
+    svm: "/Data/Data_Visualization/2nd_quadrimester/models/Polytechnic_SVM_model.sav"
+  3rd_quad:
+    gb: "/Data/Data_Visualization/3rd_quadrimester/models/Polytechnic_gradientBoosting_model.sav"
+    rf: "/Data/Data_Visualization/3rd_quadrimester/models/Polytechnic_randomForest_model.sav"
+    svm: "/Data/Data_Visualization/3rd_quadrimester/models/Polytechnic_SVM_model.sav"
+  4th_quad:
+    gb: "/Data/Data_Visualization/4th_quadrimester/models/Polytechnic_gradientBoosting_model.sav"
+    rf: "/Data/Data_Visualization/4th_quadrimester/models/Polytechnic_randomForest_model.sav"
+    svm: "/Data/Data_Visualization/4th_quadrimester/models/Polytechnic_SVM_model.sav"
+  5th_quad:
+    gb: "/Data/Data_Visualization/5th_quadrimester/models/Polytechnic_gradientBoosting_model.sav"
+    rf: "/Data/Data_Visualization/5th_quadrimester/models/Polytechnic_randomForest_model.sav"
+    svm: "/Data/Data_Visualization/5th_quadrimester/models/Polytechnic_SVM_model.sav"
+  6th_quad:
+    gb: "/Data/Data_Visualization/6th_quadrimester/models/Polytechnic_gradientBoosting_model.sav"
+    rf: "/Data/Data_Visualization/6th_quadrimester/models/Polytechnic_randomForest_model.sav"
+    svm: "/Data/Data_Visualization/6th_quadrimester/models/Polytechnic_SVM_model.sav"
+  7th_quad:
+    gb: "/Data/Data_Visualization/7th_quadrimester/models/Polytechnic_gradientBoosting_model.sav"
+    rf: "/Data/Data_Visualization/7th_quadrimester/models/Polytechnic_randomForest_model.sav"
+    svm: "/Data/Data_Visualization/7th_quadrimester/models/Polytechnic_SVM_model.sav"
+  8th_quad:
+    gb: "/Data/Data_Visualization/8th_quadrimester/models/Polytechnic_gradientBoosting_model.sav"
+    rf: "/Data/Data_Visualization/8th_quadrimester/models/Polytechnic_randomForest_model.sav"
+    svm: "/Data/Data_Visualization/8th_quadrimester/models/Polytechnic_SVM_model.sav"
 model:
   1: "1st_model"
   2: "2nd_model"
@@ -38,11 +78,33 @@ data:
          personal_access: "/Data/Ensemble/Processed/Polytechnic/Record_Personal_Access/pr_polytechnic_record_personal_access.csv"
     train_ids:
       personal_access_data: "/Data/Data_Visualization/record_personal_access/train_ids/Polytechnic_train_ids.csv"
+      1st_quad: "/Data/Data_Visualization/1st_quadrimester/train_ids/Polytechnic_train_ids.csv"
+      2nd_quad: "/Data/Data_Visualization/2nd_quadrimester/train_ids/Polytechnic_train_ids.csv"
+      3rd_quad: "/Data/Data_Visualization/3rd_quadrimester/train_ids/Polytechnic_train_ids.csv"
+      4th_quad: "/Data/Data_Visualization/4th_quadrimester/train_ids/Polytechnic_train_ids.csv"
+      5th_quad: "/Data/Data_Visualization/5th_quadrimester/train_ids/Polytechnic_train_ids.csv"
+      6th_quad: "/Data/Data_Visualization/6th_quadrimester/train_ids/Polytechnic_train_ids.csv"
+      7th_quad: "/Data/Data_Visualization/7th_quadrimester/train_ids/Polytechnic_train_ids.csv"
+      8th_quad: "/Data/Data_Visualization/8th_quadrimester/train_ids/Polytechnic_train_ids.csv"
     dv_analys_data:
      personal_access_data:
        pol: "/Data/Data_Visualization/record_personal_access/dv_analys_pol_record_personal_access.csv"
      1st_quad:
-       pol: "/Data/Data_Visualization/1st_quad/dv_analys_pol.csv"
+       pol: "/Data/Data_Visualization/1st_quadrimester/dv_analys_pol.csv"
+     2nd_quad:
+       pol: "/Data/Data_Visualization/2nd_quadrimester/dv_analys_pol.csv"
+     3rd_quad:
+       pol: "/Data/Data_Visualization/3rd_quadrimester/dv_analys_pol.csv"
+     4th_quad:
+      pol: "/Data/Data_Visualization/4th_quadrimester/dv_analys_pol.csv"
+     5th_quad:
+      pol: "/Data/Data_Visualization/5th_quadrimester/dv_analys_pol.csv"
+     6th_quad:
+      pol: "/Data/Data_Visualization/6th_quadrimester/dv_analys_pol.csv"
+     7th_quad:
+      pol: "/Data/Data_Visualization/7th_quadrimester/dv_analys_pol.csv"
+     8th_quad:
+      pol: "/Data/Data_Visualization/8th_quadrimester/dv_analys_pol.csv"
     final_analys_data:
      personal_access_data:
        pol: "/Data/Ensemble/For_Analysis_and_Modeling/personal_access_data/final_analys_polytechnic_record_personal_access.csv"
