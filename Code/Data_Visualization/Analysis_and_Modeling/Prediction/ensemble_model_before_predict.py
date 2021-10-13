@@ -9,13 +9,10 @@ import numpy as np
 import keys
 from data_model.school_kind import SchoolKind
 import pandas as pd
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split
 import sklearn.metrics as sklm
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.svm import SVC
-from sklearn.inspection import permutation_importance
-import plotly.express as px
-import plotly as py
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import GridSearchCV
 import pickle
@@ -28,7 +25,6 @@ class QuadrimestersEnsemble(AnalysisModeling):
     course: int = None
     school_kind: SchoolKind = None
     final_analys_record_personal_access: pd.DataFrame = None
-    model_number: str = None
     x_train: pd.DataFrame = None
     x_test: pd.DataFrame = None
     x_train_norm: pd.DataFrame = None
@@ -113,8 +109,6 @@ class QuadrimestersEnsemble(AnalysisModeling):
                                      help="course to analyze")
         argument_parser.add_argument("-q", "--quadrimester", required=True,
                                      help="quadrimester of course to analyze")
-        argument_parser.add_argument("-mn", "--model_number", required=True,
-                                     help="number of model to create")
 
         arguments = argument_parser.parse_args()
         input_path_segments = arguments.input_paths
@@ -129,7 +123,6 @@ class QuadrimestersEnsemble(AnalysisModeling):
             check_is_file=False)
         self.course = int(arguments.course)
         self.quadrimester = int(arguments.quadrimester)
-        self.model_number = arguments.model_number
         school_kind_str = arguments.school_kind
         if school_kind_str == "Teaching":
             self.school_kind = SchoolKind.Teaching
