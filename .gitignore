@@ -1,9 +1,9 @@
 *.csv
 *.xls
 *.sav
-/Code/Ensemble/Analysis_and_Modeling/2nd Process/Analysis/.ipynb_checkpoints/
-/Code/Ensemble/Analysis_and_Modeling/3rd Process/Analysis/.ipynb_checkpoints/
-/Code/Ensemble/Analysis_and_Modeling/3rd Process/Feature_Selection/.ipynb_checkpoints/
-/Code/Ensemble/Analysis_and_Modeling/3rd Process/Feature_Engineering/.ipynb_checkpoints/
-/Code/Ensemble/Analysis_and_Modeling/2nd Process/Feature_Selection/.ipynb_checkpoints/
+/Code/Analysis_and_Modeling/2nd Process/Analysis/.ipynb_checkpoints/
+/Code/Analysis_and_Modeling/3rd Process/Analysis/.ipynb_checkpoints/
+/Code/Analysis_and_Modeling/3rd Process/Feature_Selection/.ipynb_checkpoints/
+/Code/Analysis_and_Modeling/3rd Process/Feature_Engineering/.ipynb_checkpoints/
+/Code/Analysis_and_Modeling/2nd Process/Feature_Selection/.ipynb_checkpoints/
 .idea/

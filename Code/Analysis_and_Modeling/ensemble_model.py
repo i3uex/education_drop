@@ -8,15 +8,15 @@ import numpy as np
 import keys
 from data_model.school_kind import SchoolKind
 import pandas as pd
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split
 import sklearn.metrics as sklm
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.inspection import permutation_importance
 import plotly.express as px
 import plotly as py
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import GridSearchCV
+from imblearn.over_sampling import SMOTE
 
 log = logging.getLogger(__name__)
 
@@ -117,7 +117,7 @@ class QuadrimestersEnsemble(AnalysisModeling):
             check_is_file=False)
         self.course = int(arguments.course)
         self.quadrimester = int(arguments.quadrimester)
-        self.model_number = arguments.model_number
+        self.temodel_number = arguments.model_number
         school_kind_str = arguments.school_kind
         if school_kind_str == "Teaching":
             self.school_kind = SchoolKind.Teaching
@@ -136,16 +136,9 @@ class QuadrimestersEnsemble(AnalysisModeling):
 
         log.debug("QuadrimestersEnsemble.process()")
 
-        if keys.CUM_MEDIAN_KEY in self.input_df.columns:
-            median_bcket_array = np.array([0, 1.5, 3, 4.5, 6, 7.5, 9, 10])
-            self.input_df[keys.CUM_MEDIAN_INTERVAL_KEY] = pd.cut(
-                self.input_df[keys.CUM_MEDIAN_KEY], median_bcket_array, include_lowest=True)
-            self.input_df.drop([keys.CUM_MEDIAN_KEY], axis=1, inplace=True)
+        self.input_df.drop(['municipio'], axis=1)
 
         self.final_analys_record_personal_access = self.input_df.copy()
-
-        if self.course == 4:
-            self.input_df.drop([keys.PLAN_DESCRIPTION_KEY], axis=1, inplace=True)
 
         self.input_df = pd.get_dummies(data=self.input_df,
                                        columns=self.input_df.drop(self.input_df.select_dtypes(
@@ -153,95 +146,24 @@ class QuadrimestersEnsemble(AnalysisModeling):
         self.input_df.drop([keys.PLAN_CODE_KEY, keys.RECORD_KEY], axis=1, inplace=True)
 
     def analise(self):
-        drop_out_data = self.input_df[self.input_df[keys.DROP_OUT_KEY] == 1]
-        no_drop_out_data = self.input_df[self.input_df[keys.DROP_OUT_KEY] == 0]
 
-        # FOR PREVIOUS AND FIRST COURSE DATA OF POLYTECHNIC
-        if drop_out_data.shape[0] > no_drop_out_data.shape[0]:
-            from sklearn.utils import resample
-            drop_out_data_downsampled = resample(drop_out_data,
-                                                 replace=False,
-                                                 n_samples=no_drop_out_data.shape[0],
-                                                 random_state=123)
-            resample_df = pd.concat([drop_out_data_downsampled, no_drop_out_data])
-            x = resample_df.drop([keys.DROP_OUT_KEY], axis=1)
-            y = resample_df[keys.DROP_OUT_KEY]
-            self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x, y, test_size=0.25,
-                                                                                    random_state=24)
-        # FOR OTHER CASES.
-        elif self.course > 0:
-            from imblearn.combine import SMOTETomek
-            x_smt, y_smt = SMOTETomek().fit_sample(self.input_df.drop([keys.DROP_OUT_KEY], axis=1),
-                                                   self.input_df[keys.DROP_OUT_KEY])
+        x_smt, y_smt = SMOTE(random_state=123).fit_sample(self.input_df.drop([keys.DROP_OUT_KEY], axis=1),
+                                               self.input_df[keys.DROP_OUT_KEY])
 
-            self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x_smt, y_smt, test_size=0.25,
-                                                                                    random_state=24)
-        # FOR PREVIOUS AND FIRST COURSE DATA OF TEACHING
-        else:
-            from sklearn.utils import resample
-            no_drop_out_data_downsampled = resample(no_drop_out_data,
-                                                    replace=False,
-                                                    n_samples=1500,
-                                                    random_state=123)
-            drop_out_data_upsampled = resample(drop_out_data,
-                                               replace=True,
-                                               n_samples=1500,
-                                               random_state=123)
-            resample_df = pd.concat([drop_out_data_upsampled, no_drop_out_data_downsampled])
-            x = resample_df.drop([keys.DROP_OUT_KEY], axis=1)
-            y = resample_df[keys.DROP_OUT_KEY]
-            self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x, y, test_size=0.25,
-                                                                                    random_state=24)
-        norm = MinMaxScaler().fit(self.x_train)
-        self.x_train_norm = norm.transform(self.x_train)
-        self.x_test_norm = norm.transform(self.x_test)
+        self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x_smt, y_smt, test_size=0.25,
+                                                                                random_state=24, stratify=y_smt)
 
         self.models_developed.append(GradientBoostingClassifier(random_state=123).fit(self.x_train, self.y_train))
-        best_hyperparameters_RF = self.get_best_hyperparameters_RandomForest()
-        self.models_developed.append(RandomForestClassifier(
-            max_depth=best_hyperparameters_RF.max_depth,
-            n_estimators=best_hyperparameters_RF.n_estimators,
-            random_state=123).fit(self.x_train, self.y_train))
-        best_hyperparameters_SVM = self.get_best_hyperparameters_SVM()
-        self.models_developed.append(SVC(
-            C=best_hyperparameters_SVM.C,
-            gamma=best_hyperparameters_SVM.gamma,
-            probability=True, random_state=123).fit(self.x_train_norm, self.y_train))
-
-        pred_1 = self.models_developed[0].predict_proba(self.x_test)
-        pred_2 = self.models_developed[1].predict_proba(self.x_test)
-        pred_3 = self.models_developed[2].predict_proba(self.x_test_norm)
-        weighted_ensemble_pred = pred_1 * 0.7 + pred_2 * 0.15 + pred_3 * 0.15
 
         y_pred = self.models_developed[0].predict(self.x_test)
         log.info("accuracy of GB model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
         log.info("confusion matrix of GB model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
         log.info("recall of GB model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
 
-        y_pred = self.models_developed[1].predict(self.x_test)
-        log.info("accuracy of RF model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
-        log.info("confusion matrix of RF model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
-        log.info("recall of RF model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
-
-        y_pred = self.models_developed[2].predict(self.x_test_norm)
-        log.info("accuracy of SVM model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
-        log.info("confusion matrix of SVM model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
-        log.info("recall of SVM model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
-
-        y_pred = (weighted_ensemble_pred[0:, 1] >= self.threshold).astype(int)
-        log.info("accuracy of model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
-        log.info("confusion matrix of model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
-        log.info("recall of model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
-
         x_test = self.input_df.drop([keys.DROP_OUT_KEY], axis=1)
         y_test = self.input_df[keys.DROP_OUT_KEY]
-        x_test_norm = norm.transform(x_test)
 
-        pred_1 = self.models_developed[0].predict_proba(x_test)
-        pred_2 = self.models_developed[1].predict_proba(x_test)
-        pred_3 = self.models_developed[2].predict_proba(x_test_norm)
-        weighted_ensemble_pred = pred_1 * 0.7 + pred_2 * 0.15 + pred_3 * 0.15
-        y_pred = (weighted_ensemble_pred[0:, 1] >= self.threshold).astype(int)
+        y_pred = self.models_developed[0].predict(x_test)
 
         log.info("accuracy of model with complete data is: " + str(sklm.accuracy_score(y_true=y_test, y_pred=y_pred)))
         log.info("confusion matrix of model with complete data is: \n" + str(sklm.confusion_matrix(y_true=y_test,
@@ -290,29 +212,7 @@ class QuadrimestersEnsemble(AnalysisModeling):
         output_path_plot = output_path_plot.with_suffix(".html")
         py.offline.plot(fig[0], filename=str(output_path_plot))
 
-        path_segment = str(output_path_parent)
-        output_path_plot = Path(path_segment) / 'random_forest_feature_importances'
-        output_path_plot = output_path_plot.with_suffix(".html")
-        py.offline.plot(fig[1], filename=str(output_path_plot))
-
-        path_segment = str(output_path_parent)
-        output_path_plot = Path(path_segment) / 'SVC_feature_importances'
-        output_path_plot = output_path_plot.with_suffix(".html")
-        py.offline.plot(fig[2], filename=str(output_path_plot))
-
         self.final_analys_record_personal_access[self.model_number] = self.y_pred
-
-        self.final_analys_record_personal_access[keys.PLAN_DESCRIPTION_KEY] = self.final_analys_record_personal_access[
-            keys.PLAN_DESCRIPTION_KEY].astype('category')
-        for degree in self.final_analys_record_personal_access[keys.PLAN_DESCRIPTION_KEY].cat.categories:
-            data = self.final_analys_record_personal_access[self.final_analys_record_personal_access[
-                                                                keys.PLAN_DESCRIPTION_KEY] == degree]
-            log.info("accuracy of model of degree " + degree + " is: " + str(sklm.accuracy_score(
-                y_true=data[keys.DROP_OUT_KEY], y_pred=data[self.model_number])))
-            log.info("confusion matrix of model of degree " + degree + " is: \n" + str(sklm.confusion_matrix(
-                y_true=data[keys.DROP_OUT_KEY], y_pred=data[self.model_number])))
-            log.info("recall of model of degree " + degree + " is: " + str(sklm.recall_score(
-                y_true=data[keys.DROP_OUT_KEY], y_pred=data[self.model_number])))
 
         self.final_analys_record_personal_access.to_csv(
             self.output_path_segment,
