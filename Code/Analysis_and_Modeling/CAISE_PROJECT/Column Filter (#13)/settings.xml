@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+    <entry key="node_file" type="xstring" value="settings.xml"/>
+    <config key="flow_stack"/>
+    <config key="internal_node_subsettings">
+        <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+    </config>
+    <config key="model">
+        <config key="column-filter">
+            <entry key="filter-type" type="xstring" value="STANDARD"/>
+            <config key="included_names">
+                <entry key="array-size" type="xint" value="16"/>
+                <entry key="0" type="xstring" value="des_plan"/>
+                <entry key="1" type="xstring" value="anio_apertura_expediente"/>
+                <entry key="2" type="xstring" value="abandona"/>
+                <entry key="3" type="xstring" value="convocatoria_acceso"/>
+                <entry key="4" type="xstring" value="des_acceso"/>
+                <entry key="5" type="xstring" value="sexo"/>
+                <entry key="6" type="xstring" value="municipio"/>
+                <entry key="7" type="xstring" value="anio_nacimiento_interval"/>
+                <entry key="8" type="xstring" value="1st_model"/>
+                <entry key="9" type="xstring" value="scholarship"/>
+                <entry key="10" type="xstring" value="cum_absent_ratio"/>
+                <entry key="11" type="xstring" value="cum_pass_ratio"/>
+                <entry key="12" type="xstring" value="nota_admision_def"/>
+                <entry key="13" type="xstring" value="Prediction (abandona)"/>
+                <entry key="14" type="xstring" value="expediente"/>
+                <entry key="15" type="xstring" value="cod_plan"/>
+            </config>
+            <config key="excluded_names">
+                <entry key="array-size" type="xint" value="46"/>
+                <entry key="0" type="xstring" value="GRADO EN INGENIERÍA CIVIL - CONSTRUCCIONES CIVILES"/>
+                <entry key="1" type="xstring" value="GRADO EN INGENIERÍA CIVIL - HIDROLOGÍA"/>
+                <entry key="2" type="xstring" value="GRADO EN INGENIERÍA CIVIL - TRANSPORTES Y SERVICIOS URBANOS"/>
+                <entry key="3" type="xstring" value="GRADO EN EDIFICACIÓN"/>
+                <entry key="4" type="xstring" value="GRADO EN INGENIERÍA INFORMÁTICA EN INGENIERÍA DE COMPUTADORES"/>
+                <entry key="5" type="xstring" value="GRADO EN INGENIERÍA DE SONIDO E IMAGEN EN TELECOMUNICACIÓN"/>
+                <entry key="6" type="xstring" value="GRADO EN INGENIERÍA INFORMÁTICA EN INGENIERÍA DEL SOFTWARE"/>
+                <entry key="7" type="xstring" value="2009-10"/>
+                <entry key="8" type="xstring" value="2010-11"/>
+                <entry key="9" type="xstring" value="2011-12"/>
+                <entry key="10" type="xstring" value="2012-13"/>
+                <entry key="11" type="xstring" value="2013-14"/>
+                <entry key="12" type="xstring" value="2014-15"/>
+                <entry key="13" type="xstring" value="2015-16"/>
+                <entry key="14" type="xstring" value="2016-17"/>
+                <entry key="15" type="xstring" value="2008-09"/>
+                <entry key="16" type="xstring" value="JUN"/>
+                <entry key="17" type="xstring" value="SEP"/>
+                <entry key="18" type="xstring" value="EXT"/>
+                <entry key="19" type="xstring" value="ENE"/>
+                <entry key="20" type="xstring" value="DIC"/>
+                <entry key="21" type="xstring" value="Selectividad"/>
+                <entry key="22" type="xstring" value="Formación Profesional"/>
+                <entry key="23" type="xstring" value="H"/>
+                <entry key="24" type="xstring" value="D"/>
+                <entry key="25" type="xstring" value="(1990.0, 1995.0]"/>
+                <entry key="26" type="xstring" value="(1985.0, 1990.0]"/>
+                <entry key="27" type="xstring" value="(1980.0, 1985.0]"/>
+                <entry key="28" type="xstring" value="(1995.0, 2000.0]"/>
+                <entry key="29" type="xstring" value="(1975.0, 1980.0]"/>
+                <entry key="30" type="xstring" value="N"/>
+                <entry key="31" type="xstring" value="S"/>
+                <entry key="32" type="xstring" value="Prediction (abandona) (Confidence)"/>
+                <entry key="33" type="xstring" value="des_plan (#1)"/>
+                <entry key="34" type="xstring" value="anio_apertura_expediente (#1)"/>
+                <entry key="35" type="xstring" value="abandona (#1)"/>
+                <entry key="36" type="xstring" value="convocatoria_acceso (#1)"/>
+                <entry key="37" type="xstring" value="des_acceso (#1)"/>
+                <entry key="38" type="xstring" value="sexo (#1)"/>
+                <entry key="39" type="xstring" value="municipio (#1)"/>
+                <entry key="40" type="xstring" value="anio_nacimiento_interval (#1)"/>
+                <entry key="41" type="xstring" value="1st_model (#1)"/>
+                <entry key="42" type="xstring" value="scholarship (#1)"/>
+                <entry key="43" type="xstring" value="cum_absent_ratio (#1)"/>
+                <entry key="44" type="xstring" value="cum_pass_ratio (#1)"/>
+                <entry key="45" type="xstring" value="nota_admision_def (#1)"/>
+            </config>
+            <entry key="enforce_option" type="xstring" value="EnforceInclusion"/>
+            <config key="name_pattern">
+                <entry key="pattern" type="xstring" value=""/>
+                <entry key="type" type="xstring" value="Wildcard"/>
+                <entry key="caseSensitive" type="xboolean" value="true"/>
+            </config>
+            <config key="datatype">
+                <config key="typelist">
+                    <entry key="org.knime.core.data.StringValue" type="xboolean" value="false"/>
+                    <entry key="org.knime.core.data.IntValue" type="xboolean" value="false"/>
+                    <entry key="org.knime.core.data.DoubleValue" type="xboolean" value="false"/>
+                    <entry key="org.knime.core.data.BooleanValue" type="xboolean" value="false"/>
+                    <entry key="org.knime.core.data.LongValue" type="xboolean" value="false"/>
+                    <entry key="org.knime.core.data.date.DateAndTimeValue" type="xboolean" value="false"/>
+                </config>
+            </config>
+        </config>
+    </config>
+    <entry key="customDescription" type="xstring" isnull="true" value=""/>
+    <entry key="state" type="xstring" value="EXECUTED"/>
+    <entry key="factory" type="xstring" value="org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory"/>
+    <entry key="node-name" type="xstring" value="Column Filter"/>
+    <entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
+    <entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base"/>
+    <entry key="node-bundle-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+    <entry key="node-bundle-version" type="xstring" value="4.4.2.v202110181012"/>
+    <entry key="node-feature-name" type="xstring" value="KNIME Base nodes"/>
+    <entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.base.feature.group"/>
+    <entry key="node-feature-vendor" type="xstring" value="KNIME AG, Zurich, Switzerland"/>
+    <entry key="node-feature-version" type="xstring" value="4.4.2.v202110181012"/>
+    <config key="factory_settings"/>
+    <entry key="name" type="xstring" value="Column Filter"/>
+    <entry key="hasContent" type="xboolean" value="true"/>
+    <entry key="isInactive" type="xboolean" value="false"/>
+    <config key="ports">
+        <config key="port_1">
+            <entry key="index" type="xint" value="1"/>
+            <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+            <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+            <entry key="port_object_summary" type="xstring" value="Rows: 1417, Cols: 16"/>
+            <entry key="port_dir_location" type="xstring" value="port_1"/>
+        </config>
+    </config>
+    <config key="filestores">
+        <entry key="file_store_location" type="xstring" isnull="true" value=""/>
+        <entry key="file_store_id" type="xstring" value="a7399257-90b8-4a39-befa-db4ba3486b7d"/>
+    </config>
+</config>
