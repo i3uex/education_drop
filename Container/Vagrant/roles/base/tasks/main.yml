@@ -1,0 +1,119 @@
+- name: Fix v cursor handling
+  lineinfile:
+    create: yes
+    path: /home/ansible/.vimrc
+    line: set nocompatible
+
+- name: Add aliases to Bash
+  blockinfile:
+    create: yes
+    path: /home/ansible/.bashrc
+    block: |
+      alias nano="nano -w"
+      alias dir="ls -las -k -h -G"
+      alias mv="mv -i"
+      alias cp="cp -i"
+      alias rm="rm -i"
+      alias usage="du -h -d 1"
+
+- name: Set US English locale
+  community.general.locale_gen:
+    name: en_US.UTF-8
+    state: present
+
+- name: Set Timezone to Europe/Madrid
+  timezone:
+    name: Europe/Madrid
+
+- name: Enable UFW and Deny Everything
+  community.general.ufw:
+    state: enabled
+    policy: deny
+
+- name: Set UFW Logging On
+  community.general.ufw:
+    logging: "on"
+
+- name: Allow SSH through UFW
+  community.general.ufw:
+    rule: allow
+    name: OpenSSH
+
+- name: Set UFW to Protect against SSH brute-force attacks
+  community.general.ufw:
+    rule: limit
+    port: ssh
+    proto: tcp
+
+- name: Add DVC to the list of sources
+  get_url:
+    url: https://dvc.org/deb/dvc.list
+    dest: /etc/apt/sources.list.d/dvc.list
+
+- name: Update APT Cache
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Install screen
+  apt:
+    name: screen
+    state: latest
+
+- name: Install pip
+  apt:
+    name: python3-pip
+    state: latest
+
+- name: Install DVC
+  apt:
+    name: dvc
+    state: latest
+
+- name: Copy SSH Config File
+  ansible.builtin.copy:
+    src: config
+    dest: /home/{{ user }}/.ssh
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: "600"
+
+- name: Copy i3 Private Key
+  ansible.builtin.copy:
+    src: id_rsa
+    dest: /home/{{ user }}/.ssh
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: "600"
+
+- name: Copy Known Hosts
+  ansible.builtin.copy:
+    src: known_hosts
+    dest: /home/{{ user }}/.ssh
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: "644"
+
+- name: Create drop folder
+  ansible.builtin.file:
+    path: /home/{{ user }}/drop
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: "0755"
+
+- name: Copy files to drop folder
+  ansible.builtin.copy:
+    src: ../../../../../dvc_conf.sh
+    dest: /home/{{ user }}/drop
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: "644"
+
+- name: Install desktop
+  apt:
+    name: ubuntu-desktop
+    state: latest
+
+- name: Reboot into desktop
+  reboot:

@@ -1,0 +1,9 @@
+---
+- name: CAISE server configuration
+  hosts: local
+  remote_user: "{{ user }}"
+  become_method: sudo
+  become_user: root
+  become: true
+  roles:
+    - base
