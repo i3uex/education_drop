@@ -174,43 +174,10 @@ class QuadrimestersEnsemble(AnalysisModeling):
 
     def save(self):
 
-        feature_names = self.x_test.columns
-        fig = []
-        for model in self.models_developed:
-            if 'SVC' not in str(model):
-                result = permutation_importance(
-                    model, self.x_test, self.y_test, n_repeats=3, random_state=42, n_jobs=-1)
-            else:
-                result = permutation_importance(
-                    model, self.x_test_norm, self.y_test, n_repeats=3, random_state=42, n_jobs=-1)
-            logit_importances = pd.Series(result.importances_mean, index=feature_names)
-            logit_importances = logit_importances[logit_importances > 0.001]
-
-            logit_importances = pd.DataFrame({'Feature': logit_importances.sort_values(ascending=False).index,
-                                              'Permutation_importance': logit_importances.sort_values(
-                                                  ascending=False)}).reset_index(drop=True)
-
-            fig.append(px.bar(logit_importances, x='Feature', y='Permutation_importance'))
-
-            positive_correlation = []
-            negative_correlation = []
-            for feature in logit_importances['Feature']:
-                self.get_type_correlation(self.input_df[feature],
-                                          self.input_df[keys.DROP_OUT_KEY], positive_correlation,
-                                          negative_correlation)
-
-            log.info("features with positive correlation with target feature are: \n" + str(positive_correlation))
-            log.info("features with negative correlation with target feature are: \n" + str(negative_correlation))
-
         output_path = Path(self.output_path_segment)
         output_path_parent = output_path.parent
         if not output_path_parent.exists():
             output_path_parent.mkdir(parents=True)
-
-        path_segment = str(output_path_parent)
-        output_path_plot = Path(path_segment) / 'gradient_boosting_feature_importances'
-        output_path_plot = output_path_plot.with_suffix(".html")
-        py.offline.plot(fig[0], filename=str(output_path_plot))
 
         self.final_analys_record_personal_access[self.model_number] = self.y_pred
 
