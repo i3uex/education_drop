@@ -191,8 +191,8 @@ stages:
       size: 1158
     outs:
     - path: ../../Data/For_Analysis_and_Modeling/1st_quadrimester/pred_analys_polytechnic_record_personal_access.csv
-      md5: 88135caece811a29e2ec5e82f4976ea9
-      size: 220249
+      md5: eb72d5ad9d962b2370de3ccd54d9b176
+      size: 112
   feat_eng_pol_2nd_quad:
     cmd: python3 /home/fran/Escritorio/i3uex/prueba_education_drop/education_drop/Code/Ensemble/Analysis_and_Modeling/Feature_Engineering/quadrimesters_feat_eng.py
       -i "/home/fran/Escritorio/i3uex/prueba_education_drop/education_drop/Data/Ensemble/For_Analysis_and_Modeling/1st_quadrimester/pred_analys_polytechnic_record_personal_access.csv"

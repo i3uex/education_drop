@@ -12,9 +12,6 @@ from sklearn.model_selection import train_test_split
 import sklearn.metrics as sklm
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.svm import SVC
-from sklearn.inspection import permutation_importance
-import plotly.express as px
-import plotly as py
 from sklearn.model_selection import GridSearchCV
 from imblearn.over_sampling import SMOTE
 
@@ -136,7 +133,7 @@ class QuadrimestersEnsemble(AnalysisModeling):
 
         log.debug("QuadrimestersEnsemble.process()")
 
-        self.input_df.drop(['municipio'], axis=1)
+        self.input_df.drop(['municipio'], axis=1, inplace=True)
 
         self.final_analys_record_personal_access = self.input_df.copy()
 
@@ -148,29 +145,14 @@ class QuadrimestersEnsemble(AnalysisModeling):
     def analise(self):
 
         x_smt, y_smt = SMOTE(random_state=123).fit_sample(self.input_df.drop([keys.DROP_OUT_KEY], axis=1),
-                                               self.input_df[keys.DROP_OUT_KEY])
+                                                          self.input_df[keys.DROP_OUT_KEY])
 
         self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(x_smt, y_smt, test_size=0.25,
-                                                                                random_state=24, stratify=y_smt)
+                                                                                random_state=123, stratify=y_smt)
 
         self.models_developed.append(GradientBoostingClassifier(random_state=123).fit(self.x_train, self.y_train))
 
-        y_pred = self.models_developed[0].predict(self.x_test)
-        log.info("accuracy of GB model is: " + str(sklm.accuracy_score(y_true=self.y_test, y_pred=y_pred)))
-        log.info("confusion matrix of GB model is: \n" + str(sklm.confusion_matrix(y_true=self.y_test, y_pred=y_pred)))
-        log.info("recall of GB model is: " + str(sklm.recall_score(y_true=self.y_test, y_pred=y_pred)))
-
-        x_test = self.input_df.drop([keys.DROP_OUT_KEY], axis=1)
-        y_test = self.input_df[keys.DROP_OUT_KEY]
-
-        y_pred = self.models_developed[0].predict(x_test)
-
-        log.info("accuracy of model with complete data is: " + str(sklm.accuracy_score(y_true=y_test, y_pred=y_pred)))
-        log.info("confusion matrix of model with complete data is: \n" + str(sklm.confusion_matrix(y_true=y_test,
-                                                                                                   y_pred=y_pred)))
-        log.info("recall of model with complete data is: " + str(sklm.recall_score(y_true=y_test, y_pred=y_pred)))
-
-        self.y_pred = y_pred
+        self.y_pred = self.models_developed[0].predict(self.x_test)
 
     def save(self):
 
@@ -179,9 +161,19 @@ class QuadrimestersEnsemble(AnalysisModeling):
         if not output_path_parent.exists():
             output_path_parent.mkdir(parents=True)
 
-        self.final_analys_record_personal_access[self.model_number] = self.y_pred
+        y_pred = self.y_pred
 
-        self.final_analys_record_personal_access.to_csv(
+        tn, fp, fn, tp = sklm.confusion_matrix(y_true=self.y_test, y_pred=self.y_pred).ravel()
+
+        accuracy = sklm.accuracy_score(y_true=self.y_test, y_pred=self.y_pred)
+        recall = sklm.recall_score(y_true=self.y_test, y_pred=self.y_pred)
+        precision = sklm.precision_score(y_true=self.y_test, y_pred=self.y_pred)
+        specificity = tn / (tn + fp)
+
+        data = {'accuracy': [accuracy], 'recall': [recall], 'precision': [precision], 'specificity': [specificity]}
+        metrics_df = pd.DataFrame(data=data)
+
+        metrics_df.to_csv(
             self.output_path_segment,
             sep=self.output_separator,
             index=False)
