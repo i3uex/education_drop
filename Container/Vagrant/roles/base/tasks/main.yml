@@ -78,6 +78,20 @@
     group: "{{ user }}"
     mode: "0755"
 
+- name: Copy Git settings to education_drop folder
+  ansible.builtin.copy:
+    src: ../../../../../../education_drop/.git
+    dest: /home/{{ user }}/Desktop/education_drop
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Copy Git ignore to education_drop folder
+  ansible.builtin.copy:
+    src: ../../../../../../education_drop/.gitignore
+    dest: /home/{{ user }}/Desktop/education_drop
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: Copy DVC settings to education_drop folder
   ansible.builtin.copy:
     src: ../../../../../../education_drop/.dvc
