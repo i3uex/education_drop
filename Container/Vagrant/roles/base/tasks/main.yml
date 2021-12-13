@@ -17,7 +17,7 @@
       alias usage="du -h -d 1"
 
 - name: Set US English locale
-  community.general.locale_gen:
+  locale_gen:
     name: en_US.UTF-8
     state: present
 
@@ -26,21 +26,21 @@
     name: Europe/Madrid
 
 - name: Enable UFW and Deny Everything
-  community.general.ufw:
+  ufw:
     state: enabled
     policy: deny
 
 - name: Set UFW Logging On
-  community.general.ufw:
+  ufw:
     logging: "on"
 
 - name: Allow SSH through UFW
-  community.general.ufw:
+  ufw:
     rule: allow
     name: OpenSSH
 
 - name: Set UFW to Protect against SSH brute-force attacks
-  community.general.ufw:
+  ufw:
     rule: limit
     port: ssh
     proto: tcp
