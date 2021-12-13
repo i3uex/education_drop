@@ -70,18 +70,10 @@
     name: dvc
     state: latest
 
-- name: Create drop folder
-  ansible.builtin.file:
-    path: /home/{{ user }}/Desktop/drop
-    state: directory
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: "0755"
-
-- name: Copy files to drop folder
+- name: Copy project to Desktop
   ansible.builtin.copy:
     src: ../../../../../../education_drop
-    dest: /home/{{ user }}/Desktop/drop
+    dest: /home/{{ user }}/Desktop
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: "644"
