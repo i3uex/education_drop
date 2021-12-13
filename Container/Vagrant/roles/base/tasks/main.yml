@@ -70,13 +70,48 @@
     name: dvc
     state: latest
 
-- name: Copy project to Desktop
-  ansible.builtin.copy:
-    src: ../../../../../../education_drop
-    dest: /home/{{ user }}/Desktop
+- name: Create education_drop folder
+  ansible.builtin.file:
+    path: /home/{{ user }}/Desktop/education_drop
+    state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
-    mode: "644"
+    mode: "0755"
+
+- name: Copy DVC settings to education_drop folder
+  ansible.builtin.copy:
+    src: ../../../../../../education_drop/.dvc
+    dest: /home/{{ user }}/Desktop/education_drop
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Copy code to education_drop folder
+  ansible.builtin.copy:
+    src: ../../../../../../education_drop/Code
+    dest: /home/{{ user }}/Desktop/education_drop
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Copy data to education_drop folder
+  ansible.builtin.copy:
+    src: ../../../../../../education_drop/Data
+    dest: /home/{{ user }}/Desktop/education_drop
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Copy education-drop-d884963a3b3b.json to education_drop folder
+  ansible.builtin.copy:
+    src: ../../../../../../education_drop/education-drop-d884963a3b3b.json
+    dest: /home/{{ user }}/Desktop/education_drop
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Copy dvc_conf.sh to education_drop folder
+  ansible.builtin.copy:
+    src: ../../../../../../education_drop/dvc_conf.sh
+    dest: /home/{{ user }}/Desktop/education_drop
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: Install desktop
   apt:
