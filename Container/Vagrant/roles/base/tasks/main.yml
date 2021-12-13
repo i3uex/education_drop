@@ -72,7 +72,7 @@
 
 - name: Create drop folder
   ansible.builtin.file:
-    path: /home/{{ user }}/drop
+    path: /home/{{ user }}/Desktop/drop
     state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
@@ -80,8 +80,8 @@
 
 - name: Copy files to drop folder
   ansible.builtin.copy:
-    src: ../../../../../dvc_conf.sh
-    dest: /home/{{ user }}/drop
+    src: ../../../../../../education_drop
+    dest: /home/{{ user }}/Desktop/drop
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: "644"
