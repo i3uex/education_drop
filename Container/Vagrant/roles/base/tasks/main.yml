@@ -70,30 +70,6 @@
     name: dvc
     state: latest
 
-- name: Copy SSH Config File
-  ansible.builtin.copy:
-    src: config
-    dest: /home/{{ user }}/.ssh
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: "600"
-
-- name: Copy i3 Private Key
-  ansible.builtin.copy:
-    src: id_rsa
-    dest: /home/{{ user }}/.ssh
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: "600"
-
-- name: Copy Known Hosts
-  ansible.builtin.copy:
-    src: known_hosts
-    dest: /home/{{ user }}/.ssh
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: "644"
-
 - name: Create drop folder
   ansible.builtin.file:
     path: /home/{{ user }}/drop
