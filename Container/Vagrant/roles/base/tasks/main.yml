@@ -99,6 +99,13 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: Copy DVC ignore to education_drop folder
+  ansible.builtin.copy:
+    src: ../../../../../../education_drop/.dvcignore
+    dest: /home/{{ user }}/Desktop/education_drop
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: Copy code to education_drop folder
   ansible.builtin.copy:
     src: ../../../../../../education_drop/Code
