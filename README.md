@@ -27,10 +27,10 @@ For run this process you have two options:
    2. Execute the command "sh run_project.sh"
   
 - **Process for validation section of CAISE '22 Conference**
-1. **Python Environment** (The code is available on exp\caise_python_env)
+1. **Python Environment** (The code is available on exp/caise_python_env)
    1. Install docker in your OS following these guidelines: https://docs.docker.com/get-docker/
    2. Make a pull of docker image by command "docker pull docker.pkg.github.com/i3uex/education_drop/caise_validation:v1.0"
    3. Run docker image by command "docker run docker.pkg.github.com/i3uex/education_drop/caise_validation:v1.0"
 
 2. **KNIME Environment** (The code is available on exp\caise_knime_env): 
-   1. Go to exp\caise_knime_env branch and follow "education_drop/Container/Vagrant" and read the instructions in the readme.
+   1. Go to exp/caise_knime_env branch and follow "education_drop/Container/Vagrant" and read the instructions in the readme.
