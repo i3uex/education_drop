@@ -161,8 +161,6 @@ class QuadrimestersEnsemble(AnalysisModeling):
         if not output_path_parent.exists():
             output_path_parent.mkdir(parents=True)
 
-        y_pred = self.y_pred
-
         tn, fp, fn, tp = sklm.confusion_matrix(y_true=self.y_test, y_pred=self.y_pred).ravel()
 
         accuracy = sklm.accuracy_score(y_true=self.y_test, y_pred=self.y_pred)
