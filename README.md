@@ -32,5 +32,5 @@ For run this process you have two options:
    2. Make a pull of docker image by command "docker pull docker.pkg.github.com/i3uex/education_drop/caise_validation:v1.0"
    3. Run docker image by command "docker run docker.pkg.github.com/i3uex/education_drop/caise_validation:v1.0"
 
-2. **KNIME Environment** (The code is available on exp\caise_knime_env): 
+2. **KNIME Environment** (The code is available on exp/caise_knime_env): 
    1. Go to exp/caise_knime_env branch and follow "education_drop/Container/Vagrant" and read the instructions in the readme.
