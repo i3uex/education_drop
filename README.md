@@ -100,11 +100,17 @@ Based on this framework, the structure of this project is as follows:
 
 ## Running the Pipeline
 
-To execute the phases: Fetch data, ETL and Feature Engineering with DVC, run:
+For run this project you have two options: 
 
-```bash
- dvc repro
-```
+1. Via Docker **(Recommended option for no worries by dependencies of Operative System)**:
+   1. Install docker in your OS following these guidelines: https://docs.docker.com/get-docker/
+   2. Make a pull of docker image by command "docker pull docker.pkg.github.com/i3uex/education_drop/education_drop_img:1.0"
+   3. Run docker image by command "docker run docker.pkg.github.com/i3uex/education_drop/education_drop_img:1.0"
+
+2. On premise **(Linux or Windows Subsystem for Linux and Python 3.8)**: 
+   1. Go to the root directory of project and install all requirements by command "pip3 install -r requirements.txt"
+   2. Execute the command "sh run_project.sh"
+
 This will sequentially perform:
 1. **fetch data**
 2. **ETL**
